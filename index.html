@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Go by Example</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script type="text/javascript">
+    if (window.location.host == "gobyexample.com") {
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34996217-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    }
+  </script>
+  <body>
+    <div id="intro">
+      <h2><a href="./">Go by Example</a></h2>
+      <p>
+        <a href="http://golang.org">Go</a> is an
+        open source programming language designed for
+        building simple, fast, and reliable software.
+      </p>
+
+      <p>
+        <em>Go by Example</em> is a hands-on introduction
+        to Go using annotated example programs. Check out
+        the <a href="hello-world">first example</a> or
+        browse the full list below.
+      </p>
+
+      <ul>
+      
+        <li><a href="hello-world">Hello World</a></li>
+      
+        <li><a href="values">값</a></li>
+      
+        <li><a href="variables">변수</a></li>
+      
+        <li><a href="constants">상수</a></li>
+      
+        <li><a href="for">For문</a></li>
+      
+        <li><a href="if-else">조건문</a></li>
+      
+        <li><a href="switch">스위치</a></li>
+      
+        <li><a href="arrays">배열</a></li>
+      
+        <li><a href="slices">슬라이스</a></li>
+      
+        <li><a href="maps">맵</a></li>
+      
+        <li><a href="range">Range 문</a></li>
+      
+        <li><a href="functions">함수</a></li>
+      
+        <li><a href="multiple-return-values">다중 반환값</a></li>
+      
+        <li><a href="variadic-functions">가변 함수</a></li>
+      
+        <li><a href="closures">클로저</a></li>
+      
+        <li><a href="recursion">재귀</a></li>
+      
+        <li><a href="pointers">포인터</a></li>
+      
+        <li><a href="structs">구조체</a></li>
+      
+        <li><a href="methods">메서드</a></li>
+      
+        <li><a href="interfaces">인터페이스</a></li>
+      
+        <li><a href="errors">에러</a></li>
+      
+        <li><a href="goroutines">고루틴</a></li>
+      
+        <li><a href="channels">채널</a></li>
+      
+        <li><a href="channel-buffering">채널 버퍼링</a></li>
+      
+        <li><a href="channel-synchronization">채널 동기화</a></li>
+      
+        <li><a href="channel-directions">채널 방향</a></li>
+      
+        <li><a href="select">채널 선택</a></li>
+      
+        <li><a href="timeouts">타임아웃</a></li>
+      
+        <li><a href="non-blocking-channel-operations">비동기 채널 연산</a></li>
+      
+        <li><a href="closing-channels">채널 닫기</a></li>
+      
+        <li><a href="range-over-channels">채널에서의 Range</a></li>
+      
+        <li><a href="timers">타이머</a></li>
+      
+        <li><a href="tickers">티커</a></li>
+      
+        <li><a href="worker-pools">워커 풀</a></li>
+      
+        <li><a href="rate-limiting">속도 제한</a></li>
+      
+        <li><a href="atomic-counters">원자성 카운터</a></li>
+      
+        <li><a href="mutexes">뮤텍스</a></li>
+      
+        <li><a href="stateful-goroutines">상태있는 고루틴</a></li>
+      
+        <li><a href="sorting">정렬</a></li>
+      
+        <li><a href="sorting-by-functions">함수를 사용한 정렬</a></li>
+      
+        <li><a href="panic">패닉</a></li>
+      
+        <li><a href="defer">지연</a></li>
+      
+        <li><a href="collection-functions">함수 결합</a></li>
+      
+        <li><a href="string-functions">문자열 함수</a></li>
+      
+        <li><a href="string-formatting">문자열 포맷팅</a></li>
+      
+        <li><a href="regular-expressions">정규식</a></li>
+      
+        <li><a href="json">JSON</a></li>
+      
+        <li><a href="time">시간</a></li>
+      
+        <li><a href="epoch">타임스탬프</a></li>
+      
+        <li><a href="time-formatting-parsing">시간 포맷팅/파싱</a></li>
+      
+        <li><a href="random-numbers">난수</a></li>
+      
+        <li><a href="number-parsing">숫자 파싱</a></li>
+      
+        <li><a href="url-parsing">URL 파싱</a></li>
+      
+        <li><a href="sha1-hashes">SHA1 해시</a></li>
+      
+        <li><a href="base64-encoding">Base64 인코딩</a></li>
+      
+        <li><a href="reading-files">파일 읽기</a></li>
+      
+        <li><a href="writing-files">파일 쓰기</a></li>
+      
+        <li><a href="line-filters">라인 필터</a></li>
+      
+        <li><a href="command-line-arguments">커맨드라인 인자</a></li>
+      
+        <li><a href="command-line-flags">커맨드라인 플래그</a></li>
+      
+        <li><a href="environment-variables">환경변수</a></li>
+      
+        <li><a href="spawning-processes">프로세스 생성</a></li>
+      
+        <li><a href="execing-processes">프로세스 실행</a></li>
+      
+        <li><a href="signals">시그널</a></li>
+      
+        <li><a href="exit">종료</a></li>
+      
+      </ul>
+      <p class="footer">
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      </p>
+    </div>
+  </body>
+</html>

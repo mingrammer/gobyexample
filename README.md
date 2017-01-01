@@ -18,6 +18,6 @@
 
 ## License
 
-This work is copyright Mark McGranaghan and licensed under a Creative Commons Attribution 3.0 Unported License.
+This work is copyright Mark McGranaghan and licensed under a [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/).
 
-The Go Gopher is copyright the Go Authors and licensed under a Creative Commons Attribution 3.0 Unported License.
+The Go Gopher is copyright the Go Authors and licensed under a [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/).

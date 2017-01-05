@@ -7,7 +7,6 @@ $ go build hello-world.go
 $ ls
 hello-world	hello-world.go
 
-# We can then execute the built binary directly.
 # 그런 다음 빌드된 바이너리를 직접 실행할 수 있습니다.
 $ ./hello-world
 hello world

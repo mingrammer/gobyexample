@@ -85,9 +85,9 @@ p.footer a, p.footer a:visited {
     color: grey;
 }
 div#intro {
-    width: 420px;
-    min-width: 420px;
-    max-width: 420px;
+    width: 425px;
+    min-width: 425px;
+    max-width: 425px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 120px;

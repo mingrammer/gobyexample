@@ -1,5 +1,4 @@
-// _Switch statements_ express conditionals across many
-// branches.
+// _스위치문_은 여러 분기에 걸친 조건문들을 표현합니다.
 
 package main
 
@@ -8,7 +7,7 @@ import "time"
 
 func main() {
 
-	// Here's a basic `switch`.
+	// 여기에 기본적인 `switch`문이 있습니다.
 	i := 2
 	fmt.Print("Write ", i, " as ")
 	switch i {
@@ -20,9 +19,8 @@ func main() {
 		fmt.Println("three")
 	}
 
-	// You can use commas to separate multiple expressions
-	// in the same `case` statement. We use the optional
-	// `default` case in this example as well.
+	// 동일한 `case`문에서 여러개의 표현식을 구분하기 위해 콤마(,)를 사용할 수 있습니다.
+	//  이 예시에서 우리는 또한 `default` 케이스도 사용했습니다. `default`는 선택사항입니다.
 	switch time.Now().Weekday() {
 	case time.Saturday, time.Sunday:
 		fmt.Println("It's the weekend")
@@ -30,9 +28,8 @@ func main() {
 		fmt.Println("It's a weekday")
 	}
 
-	// `switch` without an expression is an alternate way
-	// to express if/else logic. Here we also show how the
-	// `case` expressions can be non-constants.
+	// 표현식이 없는 `switch`는 if/else 로직을 표현하기 위한 또 다른 방법입니다.
+	//  여기서 우리는 또한 상수가 아닌 `case`문을 사용하는 방법을 볼 수 있습니다.
 	t := time.Now()
 	switch {
 	case t.Hour() < 12:
@@ -41,10 +38,9 @@ func main() {
 		fmt.Println("It's after noon")
 	}
 
-	// A type `switch` compares types instead of values.  You
-	// can use this to discover the the type of an interface
-	// value.  In this example, the variable `t` will have the
-	// type corresponding to its clause.
+	// 타입 `switch`는 값 대신 타입을 비교합니다.
+	//  여러분은 인터페이스 값의 타입을 알아내기 위해 이를 사용할 수 있습니다.
+	//  이 예시에서, 변수 `t`는 해당 절에 해당하는 타입을 가질 것입니다.
 	whatAmI := func(i interface{}) {
 		switch t := i.(type) {
 		case bool:

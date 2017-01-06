@@ -3,6 +3,5 @@ $ go run if-else.go
 8 is divisible by 4
 9 has 1 digit
 
-# There is no [ternary if](http://en.wikipedia.org/wiki/%3F:)
-# in Go, so you'll need to use a full `if` statement even
-# for basic conditions.
+# Go에는 [삼항 조건문](http://en.wikipedia.org/wiki/%3F:)이 없습니다.
+#  따라서 간단한 조건문이라도 완전한 `if`문을 사용해야 합니다.

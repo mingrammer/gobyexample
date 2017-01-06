@@ -20,7 +20,7 @@ func main() {
 	fmt.Println(d)
 
 	// 초기화 없이 선언된 변수는 제로값을 갖게 됩니다.
-	//  예를 들면, `int`의 제로값은 `0`입니다.
+	//  예를 들어, `int`의 제로값은 `0`입니다.
 	var e int
 	fmt.Println(e)
 

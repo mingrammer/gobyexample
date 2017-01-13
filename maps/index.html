@@ -25,18 +25,8 @@
         
         <tr>
           <td class="docs">
-            <p><em>Maps</em> are Go's built-in <a href="http://en.wikipedia.org/wiki/Associative_array">associative data type</a>(sometimes called <em>hashes</em> or <em>dicts</em> in other languages).</p>
+            <p><em>Maps</em>는 Go의 내장 <a href="http://en.wikipedia.org/wiki/Associative_array">연관 데이터 타입(associative data type)</a> 입니다. (다른 언어에선 <em>hashes</em> 또는 <em>dicts</em>라고 부르기도 합니다.)</p>
 
-          </td>
-          <td class="code empty leading">
-	        
-            
-          </td>
-        </tr>
-        
-        <tr>
-          <td class="docs">
-            
           </td>
           <td class="code leading">
 	        
@@ -72,7 +62,7 @@
         
         <tr>
           <td class="docs">
-            <p>To create an empty map, use the builtin <code>make</code>:<code>make(map[key-type]val-type)</code>.</p>
+            <p>빈 맵을 생성하기 위해 내장 함수인 <code>make</code>를 사용합니다 : <code>make(map[key-type]val-type)</code></p>
 
           </td>
           <td class="code leading">
@@ -85,7 +75,7 @@
         
         <tr>
           <td class="docs">
-            <p>Set key/value pairs using typical <code>name[key] = val</code>syntax.</p>
+            <p><code>name[key] = val</code>로 key/value 쌍을 저장합니다.</p>
 
           </td>
           <td class="code leading">
@@ -99,7 +89,7 @@
         
         <tr>
           <td class="docs">
-            <p>Printing a map with e.g. <code>Println</code> will show all ofits key/value pairs.</p>
+            <p>맵 출력. <code>Println</code>는 맵의 모든 key/value 쌍들을 출력합니다.</p>
 
           </td>
           <td class="code leading">
@@ -112,7 +102,7 @@
         
         <tr>
           <td class="docs">
-            <p>Get a value for a key with <code>name[key]</code>.</p>
+            <p><code>name[key]</code>로 키에 해당하는 값을 가져옵니다.</p>
 
           </td>
           <td class="code leading">
@@ -126,7 +116,7 @@
         
         <tr>
           <td class="docs">
-            <p>The builtin <code>len</code> returns the number of key/valuepairs when called on a map.</p>
+            <p><code>len</code>을 맵에 사용하면 key/value 쌍의 갯수를 반환합니다.</p>
 
           </td>
           <td class="code leading">
@@ -139,7 +129,7 @@
         
         <tr>
           <td class="docs">
-            <p>The builtin <code>delete</code> removes key/value pairs froma map.</p>
+            <p><code>delete</code> 내장 함수는 맵의 key/value 쌍을 삭제합니다.</p>
 
           </td>
           <td class="code leading">
@@ -153,7 +143,7 @@
         
         <tr>
           <td class="docs">
-            <p>The optional second return value when getting avalue from a map indicates if the key was presentin the map. This can be used to disambiguatebetween missing keys and keys with zero valueslike <code>0</code> or <code>&quot;&quot;</code>. Here we didn't need the valueitself, so we ignored it with the <em>blank identifier</em><code>_</code>.</p>
+            <p>맵에서 값을 꺼내오면서 반환되는 선택적인 두번째 반환값은 해당 키가 맵에 존재하는지에 대한 여부를 나타냅니다. 이는 키값이 존재하지 않는건지 또는 해당 값이 <code>0</code>이나 <code>&quot;&quot;</code>과 같은 제로값 인지를 명확하게 구분하는데 사용할 수 있습니다. 값 자체가 필요없는 경우엔, <em>공백 식별자(blank identifier)</em> <code>_</code>를 사용해 무시할 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -167,7 +157,7 @@
         
         <tr>
           <td class="docs">
-            <p>You can also declare and initialize a new map inthe same line with this syntax.</p>
+            <p>또한 한 줄로 맵 선언 및 초기화를 할 수도 있습니다.</p>
 
           </td>
           <td class="code">
@@ -186,12 +176,12 @@
         
         <tr>
           <td class="docs">
-            <p>Note that maps appear in the form <code>map[k:v k:v]</code> whenprinted with <code>fmt.Println</code>.</p>
+            <p>참고로 맵을 <code>fmt.Println</code>으로 출력하면 <code>map[k:v k:v]</code>의 형태로 출력됩니다.</p>
 
           </td>
           <td class="code">
 	        
-            <div class="highlight"><pre><span></span><span class="gp">$</span> go run maps.go 
+            <div class="highlight"><pre><span></span><span class="gp">$</span> go run maps.go
 <span class="go">map: map[k1:7 k2:13]</span>
 <span class="go">v1:  7</span>
 <span class="go">len: 2</span>

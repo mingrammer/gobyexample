@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p><em>Slices</em> are a key data type in Go, giving a morepowerful interface to sequences than arrays.</p>
+            <p><em>Slices</em>는 배열보다 좀 더 강력한 시퀀스 인터페이스를 제공하는 Go의 핵심적인 데이터 타입입니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -72,7 +72,7 @@
         
         <tr>
           <td class="docs">
-            <p>Unlike arrays, slices are typed only by theelements they contain (not the number of elements).To create an empty slice with non-zero length, usethe builtin <code>make</code>. Here we make a slice of<code>string</code>s of length <code>3</code> (initially zero-valued).</p>
+            <p>배열과 다르게, 슬라이스는 원소의 갯수가 아닌 포함된 원소들로만 작성됩니다. 길이가 0인 빈 배열을 만들기 위해선 내장 함수 <code>make</code>를 사용하면 됩니다. 제로값으로 초기화된 길이가 3인 문자열 배열을 만듭니다.</p>
 
           </td>
           <td class="code leading">
@@ -86,7 +86,7 @@
         
         <tr>
           <td class="docs">
-            <p>We can set and get just like with arrays.</p>
+            <p>배열처럼 값을 저장하고 사용할 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -103,7 +103,7 @@
         
         <tr>
           <td class="docs">
-            <p><code>len</code> returns the length of the slice as expected.</p>
+            <p><code>len</code>은 예상대로 슬라이스의 길이를 반환합니다.</p>
 
           </td>
           <td class="code leading">
@@ -116,7 +116,7 @@
         
         <tr>
           <td class="docs">
-            <p>In addition to these basic operations, slicessupport several more that make them richer thanarrays. One is the builtin <code>append</code>, whichreturns a slice containing one or more new values.Note that we need to accept a return value fromappend as we may get a new slice value.</p>
+            <p>이러한 기본 연산에 이어 슬라이스는 배열보다 더 풍부한 기능들을 지원합니다. 그 중 하나는 새로운 값이 추가된 슬라이스를 반환하는 <code>append</code> 함수입니다. 주의할건 새로운 슬라이스를 사용하기위해선 append로부터 반환되는 값을 사용해야합니다.</p>
 
           </td>
           <td class="code leading">
@@ -131,7 +131,7 @@
         
         <tr>
           <td class="docs">
-            <p>Slices can also be <code>copy</code>'d. Here we create anempty slice <code>c</code> of the same length as <code>s</code> and copyinto <code>c</code> from <code>s</code>.</p>
+            <p>슬라이스는 또한 복사도 가능합니다. <code>s</code>와 같은 길이를 갖는 빈 슬라이스 <code>c</code>를 생성하고 <code>s</code>를 <code>c</code>로 복사합니다.</p>
 
           </td>
           <td class="code leading">
@@ -146,7 +146,7 @@
         
         <tr>
           <td class="docs">
-            <p>Slices support a &quot;slice&quot; operator with the syntax<code>slice[low:high]</code>. For example, this gets a sliceof the elements <code>s[2]</code>, <code>s[3]</code>, and <code>s[4]</code>.</p>
+            <p>슬라이스는 <code>slice[low:high]</code>로 쓸 수 있는 &quot;slice(자르기)&quot; 연산을 지원합니다. 예를 들어, 다음 연산을 통해 <code>s[2]</code>, <code>s[3]</code>와 <code>s[4]</code>로 이루어진 슬라이스를 얻을 수 있습니다.`</p>
 
           </td>
           <td class="code leading">
@@ -160,7 +160,7 @@
         
         <tr>
           <td class="docs">
-            <p>This slices up to (but excluding) <code>s[5]</code>.</p>
+            <p>다음처럼 쓰면 <code>s[5]</code>까지 자릅니다. (단, 마지막 원소는 포함하지 않습니다.)</p>
 
           </td>
           <td class="code leading">
@@ -174,7 +174,7 @@
         
         <tr>
           <td class="docs">
-            <p>And this slices up from (and including) <code>s[2]</code>.</p>
+            <p>또한 다음처럼 쓰면 <code>s[2]</code>부터 자르게 됩니다. (이 때는 첫원소를 포함합니다.)</p>
 
           </td>
           <td class="code leading">
@@ -188,7 +188,7 @@
         
         <tr>
           <td class="docs">
-            <p>We can declare and initialize a variable for slicein a single line as well.</p>
+            <p>또한 슬라이스 선언 및 초기화를 한 줄로도 할 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -202,7 +202,7 @@
         
         <tr>
           <td class="docs">
-            <p>Slices can be composed into multi-dimensional datastructures. The length of the inner slices canvary, unlike with multi-dimensional arrays.</p>
+            <p>슬라이스는 다차원 데이터를 구성할 수도 있습니다 다차원 배열과 다르게 다중 슬라이스의 내부 슬라이스들은 가변적 길이를 가질 수 있습니다.</p>
 
           </td>
           <td class="code">
@@ -228,7 +228,7 @@
         
         <tr>
           <td class="docs">
-            <p>Note that while slices are different types than arrays,they are rendered similarly by <code>fmt.Println</code>.</p>
+            <p>참고로 슬라이스는 배열과는 다른 타입이지만 <code>fmt.Println</code>로 출력을 하면 유사한 형태로 출력됩니다.</p>
 
           </td>
           <td class="code leading">
@@ -252,7 +252,7 @@
         
         <tr>
           <td class="docs">
-            <p>Check out this <a href="http://blog.golang.org/2011/01/go-slices-usage-and-internals.html">great blog post</a>by the Go team for more details on the design andimplementation of slices in Go.</p>
+            <p>Go 슬라이스의 설계와 구현체에 대한 자세한 정보는 Go팀에서 작성한 <a href="http://blog.golang.org/2011/01/go-slices-usage-and-internals.html">great blog post</a>를 참고하세요.</p>
 
           </td>
           <td class="code empty leading">
@@ -263,7 +263,7 @@
         
         <tr>
           <td class="docs">
-            <p>Now that we've seen arrays and slices we'll look atGo's other key builtin data structure: maps.</p>
+            <p>지금까지 배열과 슬라이스를 살펴봤습니다. 다음엔 Go의 또 다른 핵심 내장 데이터 구조인 maps를 살펴봅시다.</p>
 
           </td>
           <td class="code empty">

@@ -1,5 +1,4 @@
-# Note that while slices are different types than arrays,
-# they are rendered similarly by `fmt.Println`.
+# 참고로 슬라이스는 배열과는 다른 타입이지만 `fmt.Println`로 출력을 하면 유사한 형태로 출력됩니다.
 $ go run slices.go
 emp: [  ]
 set: [a b c]
@@ -13,9 +12,6 @@ sl3: [c d e f]
 dcl: [g h i]
 2d:  [[0] [1 2] [2 3 4]]
 
-# Check out this [great blog post](http://blog.golang.org/2011/01/go-slices-usage-and-internals.html)
-# by the Go team for more details on the design and
-# implementation of slices in Go.
+# Go 슬라이스의 설계와 구현체에 대한 자세한 정보는 Go팀에서 작성한 [great blog post](http://blog.golang.org/2011/01/go-slices-usage-and-internals.html)를 참고하세요.
 
-# Now that we've seen arrays and slices we'll look at
-# Go's other key builtin data structure: maps.
+# 지금까지 배열과 슬라이스를 살펴봤습니다. 다음엔 Go의 또 다른 핵심 내장 데이터 구조인 maps를 살펴봅시다.

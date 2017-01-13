@@ -48,7 +48,7 @@ func main() {
 	l = s[2:]
 	fmt.Println("sl3:", l)
 
-	// 또한 슬라이스 선언 및 초기화를 한 줄로도 할 수 있습니다.
+	// 또한 한 줄로 슬라이스 선언 및 초기화를 할 수도 있습니다.
 	t := []string{"g", "h", "i"}
 	fmt.Println("dcl:", t)
 

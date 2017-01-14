@@ -1,7 +1,6 @@
-$ go run variadic-functions.go 
+$ go run variadic-functions.go
 [1 2] 3
 [1 2 3] 6
 [1 2 3 4] 10
 
-# Another key aspect of functions in Go is their ability
-# to form closures, which we'll look at next.
+# Go 함수의 또 다른 핵심 기능은 다음장에서 살펴볼 클로져를 구성할 수 있는 기능입니다.

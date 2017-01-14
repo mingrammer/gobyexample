@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p><a href="http://en.wikipedia.org/wiki/Variadic_function"><em>Variadic functions</em></a>can be called with any number of trailing arguments.For example, <code>fmt.Println</code> is a common variadicfunction.</p>
+            <p><a href="http://en.wikipedia.org/wiki/Variadic_function"><em>Variadic functions</em></a>는 인자 갯수에 상관없이 호출될 수 있습니다. 예를 들면, <code>fmt.Println</code>가 일반적인 가변 함수입니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -60,7 +60,7 @@
         
         <tr>
           <td class="docs">
-            <p>Here's a function that will take an arbitrary numberof <code>ints</code> as arguments.</p>
+            <p>다음 함수는 <code>int</code>형 인자를 임의의 갯수만큼 받습니다.</p>
 
           </td>
           <td class="code leading">
@@ -92,7 +92,7 @@
         
         <tr>
           <td class="docs">
-            <p>Variadic functions can be called in the usual waywith individual arguments.</p>
+            <p>가변 함수는 일반적인 방법인 개별적인 인자들로 호출할 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -106,7 +106,7 @@
         
         <tr>
           <td class="docs">
-            <p>If you already have multiple args in a slice,apply them to a variadic function using<code>func(slice...)</code> like this.</p>
+            <p>만약 값들이 이미 슬라이스에 들어 있다면, 다음과 같이 <code>func(slice...)</code>를 사용하여 가변 함수의 인자에 적용하세요.</p>
 
           </td>
           <td class="code">
@@ -129,7 +129,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre><span></span><span class="gp">$</span> go run variadic-functions.go 
+            <div class="highlight"><pre><span></span><span class="gp">$</span> go run variadic-functions.go
 <span class="go">[1 2] 3</span>
 <span class="go">[1 2 3] 6</span>
 <span class="go">[1 2 3 4] 10</span>
@@ -140,7 +140,7 @@
         
         <tr>
           <td class="docs">
-            <p>Another key aspect of functions in Go is their abilityto form closures, which we'll look at next.</p>
+            <p>Go 함수의 또 다른 핵심 기능은 다음장에서 살펴볼 클로져를 구성할 수 있는 기능입니다.</p>
 
           </td>
           <td class="code empty">

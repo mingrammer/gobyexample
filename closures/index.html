@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>Go supports <a href="http://en.wikipedia.org/wiki/Anonymous_function"><em>anonymous functions</em></a>,which can form <a href="http://en.wikipedia.org/wiki/Closure_(computer_science)"><em>closures</em></a>.Anonymous functions are useful when you want to definea function inline without having to name it.</p>
+            <p>Go는 <a href="http://en.wikipedia.org/wiki/Closure_(computer_science)"><em>closures</em></a>를 만들 수 있는 <a href="http://en.wikipedia.org/wiki/Anonymous_function"><em>anonymous functions</em></a>를 지원합니다. 익명 함수(Anonymous functions)는 이름 없이 한줄로 함수를 정의하고 싶을때 유용합니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -60,7 +60,7 @@
         
         <tr>
           <td class="docs">
-            <p>This function <code>intSeq</code> returns another function, whichwe define anonymously in the body of <code>intSeq</code>. Thereturned function <em>closes over</em> the variable <code>i</code> toform a closure.</p>
+            <p><code>intSeq</code> 함수는 내부에 익명으로 정의한 또 다른 함수를 반환합니다. 반환된 함수는 클로저를 만들기 위해 <code>i</code> 변수를 <code>가둬둡니다(closes over).</code></p>
 
           </td>
           <td class="code leading">
@@ -91,7 +91,7 @@
         
         <tr>
           <td class="docs">
-            <p>We call <code>intSeq</code>, assigning the result (a function)to <code>nextInt</code>. This function value captures itsown <code>i</code> value, which will be updated each timewe call <code>nextInt</code>.</p>
+            <p><code>intSeq</code>를 호출하여, 결괏값(함수)을 <code>nextInt</code>에 할당합니다. 이 함숫값은 <code>nextInt</code>를 호출할 때마다 업데이트 되는 <code>i</code> 값을 캡쳐합니다.</p>
 
           </td>
           <td class="code leading">
@@ -104,7 +104,7 @@
         
         <tr>
           <td class="docs">
-            <p>See the effect of the closure by calling <code>nextInt</code>a few times.</p>
+            <p><code>netxtInt</code>를 몇 번 호출하면서 클로저가 어떻게 동작하는지 봅시다.</p>
 
           </td>
           <td class="code leading">
@@ -119,7 +119,7 @@
         
         <tr>
           <td class="docs">
-            <p>To confirm that the state is unique to thatparticular function, create and test a new one.</p>
+            <p>특정 함수에서 상태값이 유일한지 확인하기 위해, 하나를 새롭게 생성하고 테스트 해봅니다.</p>
 
           </td>
           <td class="code">
@@ -154,7 +154,7 @@
         
         <tr>
           <td class="docs">
-            <p>The last feature of functions we'll look at for now isrecursion.</p>
+            <p>함수에서 마지막으로 살펴볼 기능은 다음에 바로 살펴볼 재귀입니다.</p>
 
           </td>
           <td class="code empty">

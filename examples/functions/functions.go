@@ -1,32 +1,26 @@
-// _Functions_ are central in Go. We'll learn about
-// functions with a few different examples.
+// _Functions_는 Go의 핵심 기능입니다.
+//  몇 가지 예제들을 살펴보면서 함수를 배워봅시다.
 
 package main
 
 import "fmt"
 
-// Here's a function that takes two `int`s and returns
-// their sum as an `int`.
+// 여기에 두 `int`를 받아 그의 합을 `int`타입으로 반환하는 함수가 있습니다.
 func plus(a int, b int) int {
 
-	// Go requires explicit returns, i.e. it won't
-	// automatically return the value of the last
-	// expression.
+	// Go에선 명시적 반환을 해야합니다. 즉, 마지막 식의 값을 자동으로 반환하지 않습니다.
 	return a + b
 }
 
-// When you have multiple consecutive parameters of
-// the same type, you may omit the type name for the
-// like-typed parameters up to the final parameter that
-// declares the type.
+// 만약 같은 타입을 갖는 파라미터들이 연속적으로 주어지면,
+//  마지막 파라미터만 타입을 선언하고 나머지 파라미터들에 대해서는 타입명을 생략할 수 있습니다.
 func plusPlus(a, b, c int) int {
 	return a + b + c
 }
 
 func main() {
 
-	// Call a function just as you'd expect, with
-	// `name(args)`.
+	// 함수는 `name(args)`와 같이 호출할 수 있습니다.
 	res := plus(1, 2)
 	fmt.Println("1+2 =", res)
 

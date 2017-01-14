@@ -1,6 +1,5 @@
-$ go run functions.go 
+$ go run functions.go
 1+2 = 3
 1+2+3 = 6
 
-# There are several other features to Go functions. One is
-# multiple return values, which we'll look at next.
+# Go 함수에는 이 외의 몇 가지 다른 기능들도 있습니다. 그 중 하나는 바로 다음에 살펴볼 다중 반환값입니다.

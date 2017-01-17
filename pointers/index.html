@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>Go supports <em><a href="http://en.wikipedia.org/wiki/Pointer_(computer_programming)">pointers</a></em>,allowing you to pass references to values and recordswithin your program.</p>
+            <p>Go는 프로그램내에서 값의 참조와 레코드를 전달할 수 있는 <em><a href="http://en.wikipedia.org/wiki/Pointer_(computer_programming)">pointers</a></em>를 지원합니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -60,7 +60,7 @@
         
         <tr>
           <td class="docs">
-            <p>We'll show how pointers work in contrast to values with2 functions: <code>zeroval</code> and <code>zeroptr</code>. <code>zeroval</code> has an<code>int</code> parameter, so arguments will be passed to it byvalue. <code>zeroval</code> will get a copy of <code>ival</code> distinctfrom the one in the calling function.</p>
+            <p>두 함수 <code>zeroval</code>와 <code>zeroptr</code>를 가지고 포인터가 값과 다르게 어떻게 동작하는지 살펴봅시다. <code>zeroval</code>은 <code>int</code> 타입 파라미터를 가지므로 인자는 값으로 전달됩니다. <code>zeroval</code>는 함수를 호출할 때의 값을 <code>ival</code>에 복사하여 가져옵니다.</p>
 
           </td>
           <td class="code leading">
@@ -75,7 +75,7 @@
         
         <tr>
           <td class="docs">
-            <p><code>zeroptr</code> in contrast has an <code>*int</code> parameter, meaningthat it takes an <code>int</code> pointer. The <code>*iptr</code> code in thefunction body then <em>dereferences</em> the pointer from itsmemory address to the current value at that address.Assigning a value to a dereferenced pointer changes thevalue at the referenced address.</p>
+            <p>그에 반해 <code>zeroptr</code>는 <code>int</code>형 포인터를 받도록 <code>*int</code> 타입을 파라미터로 갖고 있습니다. 함수안에서 <code>*iptr</code>는 메모리 주소에서 해당 주소의 현재값으로 포인터를 <em>역참조(dereference)</em> 합니다. 역참조된 포인터에 값을 할당하면 이는 참조된 주소의 값을 바꿉니다.</p>
 
           </td>
           <td class="code leading">
@@ -117,7 +117,7 @@
         
         <tr>
           <td class="docs">
-            <p>The <code>&amp;i</code> syntax gives the memory address of <code>i</code>,i.e. a pointer to <code>i</code>.</p>
+            <p><code>&amp;i</code>는 <code>i</code>의 메모리 주소를 반환합니다.즉, <code>i</code>의 포인터입니다.</p>
 
           </td>
           <td class="code leading">
@@ -131,7 +131,7 @@
         
         <tr>
           <td class="docs">
-            <p>Pointers can be printed too.</p>
+            <p>포인터도 출력할 수 있습니다.</p>
 
           </td>
           <td class="code">
@@ -149,7 +149,7 @@
         
         <tr>
           <td class="docs">
-            <p><code>zeroval</code> doesn't change the <code>i</code> in <code>main</code>, but<code>zeroptr</code> does because it has a reference tothe memory address for that variable.</p>
+            <p><code>zeroval</code>은 <code>main</code>에 있는 <code>i</code>값을 바꾸지 않지만,<code>zeroptr</code>은 해당 값의 메모리 주소를 참조하고 있기 때문에 값을 바꿀 수 있습니다.</p>
 
           </td>
           <td class="code">

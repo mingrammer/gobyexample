@@ -6,5 +6,4 @@ $ go run interfaces.go
 78.53981633974483
 31.41592653589793
 
-# To learn more about Go's interfaces, check out this
-# [great blog post](http://jordanorelli.tumblr.com/post/32665860244/how-to-use-interfaces-in-go).
+# Go의 인터페이스에 대해 더 알고싶다면, [great blog post](http://jordanorelli.tumblr.com/post/32665860244/how-to-use-interfaces-in-go)를 읽어보세요.

@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>In Go it's idiomatic to communicate errors via anexplicit, separate return value. This contrasts withthe exceptions used in languages like Java and Ruby andthe overloaded single result / error value sometimesused in C. Go's approach makes it easy to see whichfunctions return errors and to handle them using thesame language constructs employed for any other,non-error tasks.</p>
+            <p>Go에선 명시적으로 별도의 반환값을 통해 에러를 전달하는게 일반적이고 관용적입니다. 익셉션을 사용하는 Java와 Ruby 그리고 때때로 결괏값과 에러값을 단일값에 오버로딩하는 C와는 대조적입니다. Go의 이런 접근법을 통해 어떤 함수가 에러를 반환했는지를 보고 다른 에러 없는 작업에 사용되는 구조체를 사용하여 쉽게 처리할 수 있습니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -61,7 +61,7 @@
         
         <tr>
           <td class="docs">
-            <p>By convention, errors are the last return value andhave type <code>error</code>, a built-in interface.</p>
+            <p>관용적으로, 에러는 마지막 반환값이며 내장 인터페이스인 <code>error</code>를 타입으로 갖습니다.</p>
 
           </td>
           <td class="code leading">
@@ -75,7 +75,7 @@
         
         <tr>
           <td class="docs">
-            <p><code>errors.New</code> constructs a basic <code>error</code> valuewith the given error message.</p>
+            <p><code>errors.New</code>는 전달된 에러 메시지로 기본적인 <code>error</code>값을 생성합니다.</p>
 
           </td>
           <td class="code leading">
@@ -100,7 +100,7 @@
         
         <tr>
           <td class="docs">
-            <p>A nil value in the error position indicates thatthere was no error.</p>
+            <p>에러 위치의 nil값은 에러가 없다는걸 나타냅니다.</p>
 
           </td>
           <td class="code leading">
@@ -114,7 +114,7 @@
         
         <tr>
           <td class="docs">
-            <p>It's possible to use custom types as <code>error</code>s byimplementing the <code>Error()</code> method on them. Here's avariant on the example above that uses a custom typeto explicitly represent an argument error.</p>
+            <p><code>Error()</code> 메서드를 구현함으로써 커스텀 <code>error</code> 타입을 사용하는것도 가능합니다. 다음은 인자 에러를 명시적으로 나타내기 위해 커스텀 타입을 사용한 위의 변형된 예제입니다.</p>
 
           </td>
           <td class="code leading">
@@ -157,7 +157,7 @@
         
         <tr>
           <td class="docs">
-            <p>In this case we use <code>&amp;argError</code> syntax to builda new struct, supplying values for the twofields <code>arg</code> and <code>prob</code>.</p>
+            <p>이 경우 우리는 <code>&amp;argError</code> 구문을 사용하여 두 필드 <code>arg</code>와 <code>prob</code> 값을 가지고 새로운 구조체를 만듭니다.</p>
 
           </td>
           <td class="code leading">
@@ -185,7 +185,7 @@
         
         <tr>
           <td class="docs">
-            <p>The two loops below test out each of ourerror-returning functions. Note that the use of aninline error check on the <code>if</code> line is a commonidiom in Go code.</p>
+            <p>아래의 두 루프는 에러를 반환하는 각 함수를 테스트합니다.참고로 <code>if</code> 라인에서 한 줄로 에러를 체크하는 방법은 Go의 공통적인 관용적 표현입니다.</p>
 
           </td>
           <td class="code leading">
@@ -211,7 +211,7 @@
         
         <tr>
           <td class="docs">
-            <p>If you want to programmatically use the data ina custom error, you'll need to get the error  as aninstance of the custom error type via typeassertion.</p>
+            <p>커스텀 에러에서 프로그래밍적으로 데이터를 사용하려면, 타입 단언(type assertion)을 통해 커스텀 에러의 인스턴스로 에러값을 받아와야 합니다.</p>
 
           </td>
           <td class="code">
@@ -251,7 +251,7 @@
         
         <tr>
           <td class="docs">
-            <p>See this <a href="http://blog.golang.org/2011/07/error-handling-and-go.html">great post</a>on the Go blog for more on error handling.</p>
+            <p>에러 핸들링에 대해 더 알고 싶다면 Go 블로그의 <a href="http://blog.golang.org/2011/07/error-handling-and-go.html">great post</a>를 보세요.</p>
 
           </td>
           <td class="code empty">

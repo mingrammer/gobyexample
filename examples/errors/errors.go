@@ -1,37 +1,27 @@
-// In Go it's idiomatic to communicate errors via an
-// explicit, separate return value. This contrasts with
-// the exceptions used in languages like Java and Ruby and
-// the overloaded single result / error value sometimes
-// used in C. Go's approach makes it easy to see which
-// functions return errors and to handle them using the
-// same language constructs employed for any other,
-// non-error tasks.
+// Go에선 명시적으로 별도의 반환값을 통해 에러를 전달하는게 일반적이고 관용적입니다.
+//  익셉션을 사용하는 Java와 Ruby 그리고 때때로 결괏값과 에러값을 단일값에 오버로딩하는 C와는 대조적입니다.
+//  Go의 이런 접근법을 통해 어떤 함수가 에러를 반환했는지를 보고 다른 에러 없는 작업에 사용되는 구조체를 사용하여 쉽게 처리할 수 있습니다.
 
 package main
 
 import "errors"
 import "fmt"
 
-// By convention, errors are the last return value and
-// have type `error`, a built-in interface.
+// 관용적으로, 에러는 마지막 반환값이며 내장 인터페이스인 `error`를 타입으로 갖습니다.
 func f1(arg int) (int, error) {
 	if arg == 42 {
 
-		// `errors.New` constructs a basic `error` value
-		// with the given error message.
+		// `errors.New`는 전달된 에러 메시지로 기본적인 `error`값을 생성합니다.
 		return -1, errors.New("can't work with 42")
 
 	}
 
-	// A nil value in the error position indicates that
-	// there was no error.
+	// 에러 위치의 nil값은 에러가 없다는걸 나타냅니다.
 	return arg + 3, nil
 }
 
-// It's possible to use custom types as `error`s by
-// implementing the `Error()` method on them. Here's a
-// variant on the example above that uses a custom type
-// to explicitly represent an argument error.
+// `Error()` 메서드를 구현함으로써 커스텀 `error` 타입을 사용하는것도 가능합니다.
+//  다음은 인자 에러를 명시적으로 나타내기 위해 커스텀 타입을 사용한 위의 변형된 예제입니다.
 type argError struct {
 	arg  int
 	prob string
@@ -44,9 +34,7 @@ func (e *argError) Error() string {
 func f2(arg int) (int, error) {
 	if arg == 42 {
 
-		// In this case we use `&argError` syntax to build
-		// a new struct, supplying values for the two
-		// fields `arg` and `prob`.
+		// 이 경우 우리는 `&argError` 구문을 사용하여 두 필드 `arg`와 `prob` 값을 가지고 새로운 구조체를 만듭니다.
 		return -1, &argError{arg, "can't work with it"}
 	}
 	return arg + 3, nil
@@ -54,10 +42,8 @@ func f2(arg int) (int, error) {
 
 func main() {
 
-	// The two loops below test out each of our
-	// error-returning functions. Note that the use of an
-	// inline error check on the `if` line is a common
-	// idiom in Go code.
+	// 아래의 두 루프는 에러를 반환하는 각 함수를 테스트합니다.
+	// 참고로 `if` 라인에서 한 줄로 에러를 체크하는 방법은 Go의 공통적인 관용적 표현입니다.
 	for _, i := range []int{7, 42} {
 		if r, e := f1(i); e != nil {
 			fmt.Println("f1 failed:", e)
@@ -73,10 +59,7 @@ func main() {
 		}
 	}
 
-	// If you want to programmatically use the data in
-	// a custom error, you'll need to get the error  as an
-	// instance of the custom error type via type
-	// assertion.
+	// 커스텀 에러에서 프로그래밍적으로 데이터를 사용하려면, 타입 단언(type assertion)을 통해 커스텀 에러의 인스턴스로 에러값을 받아와야 합니다.
 	_, e := f2(42)
 	if ae, ok := e.(*argError); ok {
 		fmt.Println(ae.arg)

@@ -25,18 +25,8 @@
         
         <tr>
           <td class="docs">
-            <p><em>Timeouts</em> are important for programs that connect toexternal resources or that otherwise need to boundexecution time. Implementing timeouts in Go is easy andelegant thanks to channels and <code>select</code>.</p>
+            <p><em>Timeouts</em>은 외부 리소스를 연결하거나 실행 시간을 제한해야하는 프로그램에서 중요합니다. Go에서 타임아웃 구현은 채널과 <code>select</code>를 사용하면 쉽고 우아하게 할 수 있습니다.</p>
 
-          </td>
-          <td class="code empty leading">
-	        
-            
-          </td>
-        </tr>
-        
-        <tr>
-          <td class="docs">
-            
           </td>
           <td class="code leading">
 	        
@@ -73,7 +63,7 @@
         
         <tr>
           <td class="docs">
-            <p>For our example, suppose we're executing an externalcall that returns its result on a channel <code>c1</code>after 2s.</p>
+            <p>이번 예제에선, 2초 후에 <code>c1</code> 채널에 결괏값을 반환하는 외부 호출을 실행한다고 가정합니다.</p>
 
           </td>
           <td class="code leading">
@@ -90,7 +80,7 @@
         
         <tr>
           <td class="docs">
-            <p>Here's the <code>select</code> implementing a timeout.<code>res := &lt;-c1</code> awaits the result and <code>&lt;-Time.After</code>awaits a value to be sent after the timeout of1s. Since <code>select</code> proceeds with the firstreceive that's ready, we'll take the timeout caseif the operation takes more than the allowed 1s.</p>
+            <p>다음은 <code>select</code>로 구현한 타임아웃입니다. <code>res := &lt;-c1</code>은 결괏값을 대기하고 <code>&lt;-Time.After</code>는 1초의 타임아웃 후에 전달되는 값을 대기합니다. <code>select</code>는 대기중인 첫번째 리시브로 진행되고 있기 때문에, 만약 이 연산이 허용된 1초 보다 더 오래걸릴 경우, 타임아웃이 발생합니다.</p>
 
           </td>
           <td class="code leading">
@@ -108,7 +98,7 @@
         
         <tr>
           <td class="docs">
-            <p>If we allow a longer timeout of 3s, then the receivefrom <code>c2</code> will succeed and we'll print the result.</p>
+            <p>만약 타움아웃을 3초로 늘리면, <code>c2</code>로부터의 수신은 성공하고 결괏값을 출력할겁니다.</p>
 
           </td>
           <td class="code">
@@ -136,7 +126,7 @@
         
         <tr>
           <td class="docs">
-            <p>Running this program shows the first operation timingout and the second succeeding.</p>
+            <p>이 프로그램을 실행하면 첫 연산은 타임아웃되고 두번째 연산은 성공하는걸 볼 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -151,7 +141,7 @@
         
         <tr>
           <td class="docs">
-            <p>Using this <code>select</code> timeout pattern requirescommunicating results over channels. This is a goodidea in general because other important Go features arebased on channels and <code>select</code>. We'll look at twoexamples of this next: timers and tickers.</p>
+            <p><code>select</code> 타임아웃 패턴을 사용하려면 채널을 통해 결괏값을 전달해야합니다. Go의 중요한 기능들이 채널과 <code>select</code> 기반이기 때문에 일반적으로 이는 좋은 아이디어입니다. 다음장에선 타이머(timers)와 티커(tickers)의 두 가지 예제를 살펴보겠습니다.</p>
 
           </td>
           <td class="code empty">

@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>In a <a href="range">previous</a> example we saw how <code>for</code> and<code>range</code> provide iteration over basic data structures.We can also use this syntax to iterate overvalues received from a channel.</p>
+            <p><a href="/gobyexample/range">이전</a> 예제에서 우리는 <code>for</code>와 <code>range</code>가 기본 자료구조에서 어떻게 순회하는지 살펴보았습니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -72,7 +72,7 @@
         
         <tr>
           <td class="docs">
-            <p>We'll iterate over 2 values in the <code>queue</code> channel.</p>
+            <p><code>queue</code> 채널에 있는 2개의 값을 순회 해보겠습니다.</p>
 
           </td>
           <td class="code leading">
@@ -88,7 +88,7 @@
         
         <tr>
           <td class="docs">
-            <p>This <code>range</code> iterates over each element as it'sreceived from <code>queue</code>. Because we <code>close</code>d thechannel above, the iteration terminates afterreceiving the 2 elements.</p>
+            <p>이 <code>range</code>는 <code>queue</code>로부터 수신된 각 원소들을 순회합니다. 위에서 채널을 <code>종료(close)</code>했기 때문에 이 순회 루프는 2개의 원소를 받으면 종료됩니다.</p>
 
           </td>
           <td class="code">
@@ -122,7 +122,7 @@
         
         <tr>
           <td class="docs">
-            <p>This example also showed that it's possible to closea non-empty channel but still have the remainingvalues be received.</p>
+            <p>이 예제 또한 비어있지 않은 채널을 닫아도 채널에 남아있는 값들은 수신할 수 있다는걸 보여주고 있습니다.</p>
 
           </td>
           <td class="code empty">

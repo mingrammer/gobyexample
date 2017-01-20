@@ -35,6 +35,6 @@ func main() {
 	close(jobs)
 	fmt.Println("sent all jobs")
 
-	// 이전에 봤던 [synchronization](gobyexample/channel-synchronization) 방법으로 워커를 대기합니다.
+	// 이전에 봤던 [synchronization](/gobyexample/channel-synchronization) 방법으로 워커를 대기합니다.
 	<-done
 }

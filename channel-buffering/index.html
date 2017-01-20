@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>By default channels are <em>unbuffered</em>, meaning that theywill only accept sends (<code>chan &lt;-</code>) if there is acorresponding receive (<code>&lt;- chan</code>) ready to receive thesent value. <em>Buffered channels</em> accept a limitednumber of  values without a corresponding receiver forthose values.</p>
+            <p>기본적으로 채널은  <em>버퍼가 없는 상태(unbeffered)</em>이며 이는 송신된 값을 받으려고 준비하고 있는 대응되는 리시브 (<code>&lt;- chan</code>)가 있는 경우에만 (<code>chan &lt;-</code>)을 보낼 수 있음을 의미합니다. <em>버퍼링된 채널(Buffered channels)</em>은 대응되는 리시버가 없는 값을 제한된 갯수만큼 허용합니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -72,7 +72,7 @@
         
         <tr>
           <td class="docs">
-            <p>Here we <code>make</code> a channel of strings buffering up to2 values.</p>
+            <p>다음은 최대 2개의 값을 버퍼링 할 수 있는 문자열 채널을 <code>생성(make)</code>합니다.</p>
 
           </td>
           <td class="code leading">
@@ -85,7 +85,7 @@
         
         <tr>
           <td class="docs">
-            <p>Because this channel is buffered, we can send thesevalues into the channel without a correspondingconcurrent receive.</p>
+            <p>채널이 버퍼링 되었기 때문에, 동시에 실행중인 대응되는 리시버 없이 채널에 값을 전달할 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -99,13 +99,24 @@
         
         <tr>
           <td class="docs">
-            <p>Later we can receive these two values as usual.</p>
+            <p>나중에 우리는 평소와 같은 방법으로 이 두 값을 받을 수 있습니다.</p>
 
+          </td>
+          <td class="code leading">
+	        
+            <div class="highlight"><pre><span></span>	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">messages</span><span class="p">)</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
           </td>
           <td class="code">
 	        
             <div class="highlight"><pre><span></span>	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">messages</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">messages</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 

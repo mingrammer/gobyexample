@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p><em>Closing</em> a channel indicates that no more valueswill be sent on it. This can be useful to communicatecompletion to the channel's receivers.</p>
+            <p>채널 <em>Closing</em>은 더 이상 채널에 보낼 데이터가 없음을 나타냅니다. 이는 채널의 리시버들에게 완료 상태를 전달하는데에 유용합니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -60,7 +60,7 @@
         
         <tr>
           <td class="docs">
-            <p>In this example we'll use a <code>jobs</code> channel tocommunicate work to be done from the <code>main()</code> goroutineto a worker goroutine. When we have no more jobs forthe worker we'll <code>close</code> the <code>jobs</code> channel.</p>
+            <p>이 예제에서 우리는 <code>main()</code> 고루틴에서 워커 고루틴으로 작업을 전달하기 위해 <code>jobs</code> 채널을 사용합니다. 워커에서 돌릴 잡이 더 이상 없을 경우, <code>jobs</code> 채널을 <code>close</code> 합니다.</p>
 
           </td>
           <td class="code leading">
@@ -75,7 +75,7 @@
         
         <tr>
           <td class="docs">
-            <p>Here's the worker goroutine. It repeatedly receivesfrom <code>jobs</code> with <code>j, more := &lt;-jobs</code>. In thisspecial 2-value form of receive, the <code>more</code> valuewill be <code>false</code> if <code>jobs</code> has been <code>close</code>d and allvalues in the channel have already been received.We use this to notify on <code>done</code> when we've workedall our jobs.</p>
+            <p>여기에 워커 고루틴 하나가 있습니다. 이는 <code>j, more := &lt;-jobs</code>을 통해 <code>jobs</code>로부터 반복적으로 값을 수신합니다. 이 두 값을 반환하는 특별한 형태의 수신값에서, <code>more</code>값은 <code>jobs</code>가 <code>close</code>되고 채널에 있는 모든 값들이 수신될 경우 <code>false</code>값을 갖게됩니다. 모든 잡이 종료되었음을 알리기 위해 <code>done</code>을 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -99,7 +99,7 @@
         
         <tr>
           <td class="docs">
-            <p>This sends 3 jobs to the worker over the <code>jobs</code>channel, then closes it.</p>
+            <p><code>jobs</code> 채널을 통해 워커로 3개의 잡을 보낸 후, 채널을 닫습니다.</p>
 
           </td>
           <td class="code leading">
@@ -117,7 +117,7 @@
         
         <tr>
           <td class="docs">
-            <p>We await the worker using the<a href="channel-synchronization">synchronization</a> approachwe saw earlier.</p>
+            <p>이전에 봤던 <a href="channel-synchronization">synchronization</a> 방법으로 워커를 대기합니다.</p>
 
           </td>
           <td class="code">
@@ -155,7 +155,7 @@
         
         <tr>
           <td class="docs">
-            <p>The idea of closed channels leads naturally to our nextexample: <code>range</code> over channels.</p>
+            <p>닫힌 채널의 아이디어는 다음 예제인 채널에서의 <code>range</code>와 자연스럽게 연결됩니다.</p>
 
           </td>
           <td class="code empty">

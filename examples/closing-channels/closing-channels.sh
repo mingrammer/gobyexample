@@ -8,5 +8,4 @@ received job 3
 sent all jobs
 received all jobs
 
-# The idea of closed channels leads naturally to our next
-# example: `range` over channels.
+# 닫힌 채널의 아이디어는 다음 예제인 채널에서의 `range`와 자연스럽게 연결됩니다.

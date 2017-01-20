@@ -1,26 +1,19 @@
-// _Closing_ a channel indicates that no more values
-// will be sent on it. This can be useful to communicate
-// completion to the channel's receivers.
+// 채널 _Closing_은 더 이상 채널에 보낼 데이터가 없음을 나타냅니다.
+//  이는 채널의 리시버들에게 완료 상태를 전달하는데에 유용합니다.
 
 package main
 
 import "fmt"
 
-// In this example we'll use a `jobs` channel to
-// communicate work to be done from the `main()` goroutine
-// to a worker goroutine. When we have no more jobs for
-// the worker we'll `close` the `jobs` channel.
+// 이 예제에서 우리는 `main()` 고루틴에서 워커 고루틴으로 작업을 전달하기 위해 `jobs` 채널을 사용합니다.
+//  워커에서 돌릴 잡이 더 이상 없을 경우, `jobs` 채널을 `close` 합니다.
 func main() {
 	jobs := make(chan int, 5)
 	done := make(chan bool)
 
-	// Here's the worker goroutine. It repeatedly receives
-	// from `jobs` with `j, more := <-jobs`. In this
-	// special 2-value form of receive, the `more` value
-	// will be `false` if `jobs` has been `close`d and all
-	// values in the channel have already been received.
-	// We use this to notify on `done` when we've worked
-	// all our jobs.
+	// 여기에 워커 고루틴 하나가 있습니다. 이는 `j, more := <-jobs`을 통해 `jobs`로부터 반복적으로 값을 수신합니다.
+	//  이 두 값을 반환하는 특별한 형태의 수신값에서, `more`값은 `jobs`가 `close`되고 채널에 있는 모든 값들이 수신될 경우 `false`값을 갖게됩니다.
+	//  모든 잡이 종료되었음을 알리기 위해 `done`을 사용합니다.
 	go func() {
 		for {
 			j, more := <-jobs
@@ -34,8 +27,7 @@ func main() {
 		}
 	}()
 
-	// This sends 3 jobs to the worker over the `jobs`
-	// channel, then closes it.
+	// `jobs` 채널을 통해 워커로 3개의 잡을 보낸 후, 채널을 닫습니다.
 	for j := 1; j <= 3; j++ {
 		jobs <- j
 		fmt.Println("sent job", j)
@@ -43,8 +35,6 @@ func main() {
 	close(jobs)
 	fmt.Println("sent all jobs")
 
-	// We await the worker using the
-	// [synchronization](channel-synchronization) approach
-	// we saw earlier.
+	// 이전에 봤던 [synchronization](channel-synchronization) 방법으로 워커를 대기합니다.
 	<-done
 }

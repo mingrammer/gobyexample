@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>Basic sends and receives on channels are blocking.However, we can use <code>select</code> with a <code>default</code> clause toimplement <em>non-blocking</em> sends, receives, and evennon-blocking multi-way <code>select</code>s.</p>
+            <p>채널의 송수신은 기본적으로 동기적입니다. 그러나, <code>select</code>를 <code>default</code>문과 함께 사용하면 <em>non-blocking(비동기)</em> 송수신을 구현할 수 있으며, 비동기 다중 <code>select</code>도 구현이 가능합니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -74,7 +74,7 @@
         
         <tr>
           <td class="docs">
-            <p>Here's a non-blocking receive. If a value isavailable on <code>messages</code> then <code>select</code> will takethe <code>&lt;-messages</code> <code>case</code> with that value. If notit will immediately take the <code>default</code> case.</p>
+            <p>다음은 비동기 수신입니다. <code>messages</code>에서 값을 사용할 수 있는 경우, <code>select</code>는 <code>&lt;-messages</code> <code>case</code>에서 그 값을 가져옵니다. 그렇지 않은 경우엔 바로 <code>default</code> 케이스를 수행합니다.</p>
 
           </td>
           <td class="code leading">
@@ -92,7 +92,7 @@
         
         <tr>
           <td class="docs">
-            <p>A non-blocking send works similarly.</p>
+            <p>비동기 송신도 유사하게 동작합니다.</p>
 
           </td>
           <td class="code leading">
@@ -111,7 +111,7 @@
         
         <tr>
           <td class="docs">
-            <p>We can use multiple <code>case</code>s above the <code>default</code>clause to implement a multi-way non-blockingselect. Here we attempt non-blocking receiveson both <code>messages</code> and <code>signals</code>.</p>
+            <p>다중 비동기 select를 구현하기 위해 위의 <code>default</code>문에 다중 <code>case</code>를 구현할 수 있습니다. 다음은 <code>messages</code>와 <code>signals</code> 두 채널로부터의 비동기 수신을 시도합니다.</p>
 
           </td>
           <td class="code">

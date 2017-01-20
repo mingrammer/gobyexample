@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p><a href="timers">Timers</a> are for when you want to dosomething once in the future - <em>tickers</em> are for whenyou want to do something repeatedly at regularintervals. Here's an example of a ticker that ticksperiodically until we stop it.</p>
+            <p><a href="/gobyexample/timers">Timers</a>는 미래의 한 시점에 무언가를 하고싶을때 사용할 수 있습니다. <em>tickers</em>는 일정한 간격으로 무언가를 반복하고자 할 때 사용할 수 있습니다. 여기에 우리가 중단할 때까지 주기적으로 작업을 반복하는 티커의 예시가 있습니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -73,7 +73,7 @@
         
         <tr>
           <td class="docs">
-            <p>Tickers use a similar mechanism to timers: achannel that is sent values. Here we'll use the<code>range</code> builtin on the channel to iterate overthe values as they arrive every 500ms.</p>
+            <p>티커는 타이머와 유사한 메커니즘을 사용합니다: 값을 전송하는 채널을 사용. 다음은 매 500ms마다 도착하는 값들을 순회하기 위해 채널에서 <code>range</code>를 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -91,7 +91,7 @@
         
         <tr>
           <td class="docs">
-            <p>Tickers can be stopped like timers. Once a tickeris stopped it won't receive any more values on itschannel. We'll stop ours after 1600ms.</p>
+            <p>티커는 타이머와 유사한 방식으로 중단될 수 있습니다. 티커가 멈추면 티커의 채널은 더 이상 값들을 수신하지 않습니다. 다음은 티커를 1600ms 후에 중단시킵니다.</p>
 
           </td>
           <td class="code">
@@ -111,7 +111,7 @@
         
         <tr>
           <td class="docs">
-            <p>When we run this program the ticker should tick 3 timesbefore we stop it.</p>
+            <p>이 프로그램을 실행하면 티커는 프로그램이 종료되기 전에 3번의 틱을 발생시켜야합니다</p>
 
           </td>
           <td class="code">

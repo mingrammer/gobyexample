@@ -1,21 +1,16 @@
-// When using channels as function parameters, you can
-// specify if a channel is meant to only send or receive
-// values. This specificity increases the type-safety of
-// the program.
+// 채널을 함수의 인자로 사용할 때, 채널이 수신용인지 송신용인지를 정할 수 있습니다.
+//  이 특성은 프로그램의 타입 안전성을 높여줍니다.
 
 package main
 
 import "fmt"
 
-// This `ping` function only accepts a channel for sending
-// values. It would be a compile-time error to try to
-// receive on this channel.
+// `ping` 함수는 송신용 채널만을 받습니다. 이 채널에 수신용 채널을 넣으면 컴파일시 에러가 발생합니다.
 func ping(pings chan<- string, msg string) {
 	pings <- msg
 }
 
-// The `pong` function accepts one channel for receives
-// (`pings`) and a second for sends (`pongs`).
+// `pong` 함수는 수신용 채널인 (`pings`)를 하나 받고 송신용인 (`pongs`)를 두 번째 인자로 받습니다.
 func pong(pings <-chan string, pongs chan<- string) {
 	msg := <-pings
 	pongs <- msg

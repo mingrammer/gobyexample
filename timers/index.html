@@ -25,18 +25,8 @@
         
         <tr>
           <td class="docs">
-            <p>We often want to execute Go code at some point in thefuture, or repeatedly at some interval. Go's built-in<em>timer</em> and <em>ticker</em> features make both of these taskseasy. We'll look first at timers and thenat <a href="tickers">tickers</a>.</p>
+            <p>우리는 종종 Go 코드를 나중에 특정 시점에서 실행하거나 일정 간격으로 반복 실행시키고 싶을 때가 있습니다. Go의 내장 기능인 <em>timer</em>와 <em>ticker</em>는 이를 쉽게 만들어줍니다. 먼저 타이머(timers)를 본 뒤, 그 다음 <a href="/gobyexample/tickers">티커(tickers)</a>에 대해 살펴봅시다.</p>
 
-          </td>
-          <td class="code empty leading">
-	        
-            
-          </td>
-        </tr>
-        
-        <tr>
-          <td class="docs">
-            
           </td>
           <td class="code leading">
 	        
@@ -73,7 +63,7 @@
         
         <tr>
           <td class="docs">
-            <p>Timers represent a single event in the future. Youtell the timer how long you want to wait, and itprovides a channel that will be notified at thattime. This timer will wait 2 seconds.</p>
+            <p>타이머는 미래의 한 이벤트를 나타냅니다. 여러분이 원하는 대기 시간만큼을 타이머에게 지정해주면, 이는 해당 시각에 알림을 주는 채널을 반환합니다. 다음 타이머는 2초를 대기합니다.</p>
 
           </td>
           <td class="code leading">
@@ -86,7 +76,7 @@
         
         <tr>
           <td class="docs">
-            <p>The <code>&lt;-timer1.C</code> blocks on the timer's channel <code>C</code>until it sends a value indicating that the timerexpired.</p>
+            <p><code>&lt;-timer1.C</code>는 타이머가 만료되었음을 알려주는 값을 보내기 전까지 타이머의 <code>C</code> 채널을 블로킹합니다.</p>
 
           </td>
           <td class="code leading">
@@ -100,7 +90,7 @@
         
         <tr>
           <td class="docs">
-            <p>If you just wanted to wait, you could have used<code>time.Sleep</code>. One reason a timer may be useful isthat you can cancel the timer before it expires.Here's an example of that.</p>
+            <p>그저 대기만 하고자 했을땐, <code>time.Sleep</code>을 사용할 수 있었습니다. 타이머가 유용한 이유 중 하나는 타이머가 만료되기 전에 취소 시킬 수 있다는 것입니다. 여기에 이에 대한 예시가 있습니다.</p>
 
           </td>
           <td class="code">
@@ -126,7 +116,7 @@
         
         <tr>
           <td class="docs">
-            <p>The first timer will expire ~2s after we start theprogram, but the second should be stopped before it hasa chance to expire.</p>
+            <p>첫번째 타이머는 프로그램을 시작한지 약 2초 뒤에 만료가 되지만, 두번째는 만료가 되기 전에 중단되어야 합니다.</p>
 
           </td>
           <td class="code">

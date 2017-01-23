@@ -1,15 +1,8 @@
-# Running our program shows that the goroutine-based
-# state management example completes about 80,000
-# total operations.
+# 프로그램을 실행하면 고루틴 기반 상태 관리 예시는 약 총 80,000번의 연산을 수행함을 보여줍니다.
 $ go run stateful-goroutines.go
 readOps: 71708
 writeOps: 7177
 
-# For this particular case the goroutine-based approach
-# was a bit more involved than the mutex-based one. It
-# might be useful in certain cases though, for example
-# where you have other channels involved or when managing
-# multiple such mutexes would be error-prone. You should
-# use whichever approach feels most natural, especially
-# with respect to understanding the correctness of your
-# program.
+# 이 특별한 케이스인 고루틴 기반 접근법은 뮤텍스 기반보다 조금 더 복잡합니다.
+#  이는 특정한 경우에 유용할 수 있는데, 예를 들면 다른 채널들이 관련되어 있거나 에러가 발생하기 쉬운 다중 뮤텍스들을 관리하는 경우가 있습니다.
+#  여러분의 프로그램의 정확성을 이해하는 것과 관련해 가장 자연스럽게 느껴지는 방식을 사용해야합니다.

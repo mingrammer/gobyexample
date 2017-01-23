@@ -1,5 +1,4 @@
-# Running our program we see the first batch of requests
-# handled once every ~200 milliseconds as desired.
+# 프로그램을 실행하면 첫번째 요청 배치들이 우리가 원하는대로 매 약 200 밀리초마다 처리되고 있음을 볼 수 있습니다.
 $ go run rate-limiting.go
 request 1 2012-10-19 00:38:18.687438 +0000 UTC
 request 2 2012-10-19 00:38:18.887471 +0000 UTC
@@ -7,9 +6,7 @@ request 3 2012-10-19 00:38:19.087238 +0000 UTC
 request 4 2012-10-19 00:38:19.287338 +0000 UTC
 request 5 2012-10-19 00:38:19.487331 +0000 UTC
 
-# For the second batch of requests we serve the first
-# 3 immediately because of the burstable rate limiting,
-# then serve the remaining 2 with ~200ms delays each.
+# 두번째 요청 배치에선 첫 3개의 요청은 버스팅 가능한 속도 제한덕에 즉각적으로 처리되며 나머지 2개의 요청은 각각 약 200 밀리초의 딜레이를 가지고 처리됩니다.
 request 1 2012-10-19 00:38:20.487578 +0000 UTC
 request 2 2012-10-19 00:38:20.487645 +0000 UTC
 request 3 2012-10-19 00:38:20.487676 +0000 UTC

@@ -1,8 +1,5 @@
-// _[Rate limiting](http://en.wikipedia.org/wiki/Rate_limiting)_
-// is an important mechanism for controlling resource
-// utilization and maintaining quality of service. Go
-// elegantly supports rate limiting with goroutines,
-// channels, and [tickers](tickers).
+// _[속도 제한(Rate limiting)](http://en.wikipedia.org/wiki/Rate_limiting)_은 리소스 이용을 제어하고 서비스의 품질을 유지하기위한 중요한 메커니즘입니다.
+//  Go는 고루틴, 채널 그리고 [티커(tickers)](/gobyexample/tickers)로 속도 제한을 지원합니다.
 
 package main
 
@@ -11,52 +8,41 @@ import "fmt"
 
 func main() {
 
-	// First we'll look at basic rate limiting. Suppose
-	// we want to limit our handling of incoming requests.
-	// We'll serve these requests off a channel of the
-	// same name.
+	// 우선, 기본적인 속도 제한을 살펴봅시다. 요청 핸들링을 제한하고 싶다고 가정해봅시다.
+	//  requests라는 이름으로 요청을 처리하는 채널을 만듭니다.
 	requests := make(chan int, 5)
 	for i := 1; i <= 5; i++ {
 		requests <- i
 	}
 	close(requests)
 
-	// This `limiter` channel will receive a value
-	// every 200 milliseconds. This is the regulator in
-	// our rate limiting scheme.
+	// 'limiter' 채널은 매 200 밀리초마다 값을 받습니다. 이게 우리 속도 제한 조절기입니다.
 	limiter := time.Tick(time.Millisecond * 200)
 
-	// By blocking on a receive from the `limiter` channel
-	// before serving each request, we limit ourselves to
-	// 1 request every 200 milliseconds.
+	// 각 요청을 처리하기 전에 `limiter` 채널의 수신으로 블로킹 함으로써 매 200 밀리초마다 하나의 요청을 받도록 제한하고 있습니다.
 	for req := range requests {
 		<-limiter
 		fmt.Println("request", req, time.Now())
 	}
 
-	// We may want to allow short bursts of requests in
-	// our rate limiting scheme while preserving the
-	// overall rate limit. We can accomplish this by
-	// buffering our limiter channel. This `burstyLimiter`
-	// channel will allow bursts of up to 3 events.
+	// 전반적으로는 속도 제한을 유지하면서 요청들을 짧게 버스팅(bursts of requests)하고 싶은 경우가 있습니다.
+	//  limiter 채널을 버퍼링함으로써 이를 가능케할 수 있습니다.
+	//  `burstyLimiter` 채널로 최대 3개의 이벤트를 버스팅할 수 있습니다.
 	burstyLimiter := make(chan time.Time, 3)
 
-	// Fill up the channel to represent allowed bursting.
+	// 허용된 버스팅 수만큼 채널을 채웁니다.
 	for i := 0; i < 3; i++ {
 		burstyLimiter <- time.Now()
 	}
 
-	// Every 200 milliseconds we'll try to add a new
-	// value to `burstyLimiter`, up to its limit of 3.
+	// 매 200 밀리초마다 최대 3개까지 `burstyLimiter`에 새로운 값을 추가합니다.
 	go func() {
 		for t := range time.Tick(time.Millisecond * 200) {
 			burstyLimiter <- t
 		}
 	}()
 
-	// Now simulate 5 more incoming requests. The first
-	// 3 of these will benefit from the burst capability
-	// of `burstyLimiter`.
+	// 5개의 요청이 들어오는 시뮬레이션을 해봅시다. 처음 3개의 요청은 `burstyLimiter`의 버스팅 기능의 이점을 얻습니다.
 	burstyRequests := make(chan int, 5)
 	for i := 1; i <= 5; i++ {
 		burstyRequests <- i

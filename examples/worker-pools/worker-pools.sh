@@ -1,7 +1,5 @@
-# Our running program shows the 5 jobs being executed by
-# various workers. The program only takes about 2 seconds
-# despite doing about 5 seconds of total work because
-# there are 3 workers operating concurrently.
+# 프로그램은 5개의 잡이 여러개의 워커에 의해 실행되고 있음을 보여줍니다.
+#  총 작업 시간은 5초지만 3개의 워커가 동시에 실행되고 있기 때문에, 전체 작업은 약 2초만에 끝납니다.
 $ time go run worker-pools.go 
 worker 1 started  job 1
 worker 2 started  job 2

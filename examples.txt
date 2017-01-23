@@ -40,7 +40,7 @@ Sorting->정렬
 Sorting by Functions->함수를 사용한 정렬
 Panic->패닉
 Defer->지연
-Collection Functions->함수 결합
+Collection Functions->컬렉션 함수
 String Functions->문자열 함수
 String Formatting->문자열 포맷팅
 Regular Expressions->정규식

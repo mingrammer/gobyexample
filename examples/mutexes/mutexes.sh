@@ -1,10 +1,7 @@
-# Running the program shows that we executed about
-# 90,000 total operations against our `mutex`-synchronized
-# `state`.
+# 프로그램을 실행하면 동기화된 `mutex`-동기화된 `state`에 대해 약 총 90,000번의 연산이 실행되었음을 보여줍니다.
 $ go run mutexes.go
 readOps: 83285
 writeOps: 8320
 state: map[1:97 4:53 0:33 2:15 3:2]
 
-# Next we'll look at implementing this same state
-# management task using only goroutines and channels.
+# 다음 장에선 동일한 상태 관리 작업을 고루틴과 채널만을 가지고 구현하는 방법을 살펴보겠습니다.

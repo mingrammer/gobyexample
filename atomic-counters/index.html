@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>The primary mechanism for managing state in Go iscommunication over channels. We saw this for examplewith <a href="worker-pools">worker pools</a>. There are a few otheroptions for managing state though. Here we'lllook at using the <code>sync/atomic</code> package for <em>atomiccounters</em> accessed by multiple goroutines.</p>
+            <p>Go에서 상태를 관리하는 가장 기본적인 메커니즘은 채널을 통한 통신입니다. 이는 <a href="/gobyexample/worker-pools">worker pools</a> 예제에서 보았습니다. Go에는 상태를 관리하기 위한 몇 가지 방법이 더 있습니다. 이번 예제에선 여러개의 고루틴에서 접근되는 <em>원자성 카운터(atomic counters)</em>를 위한 <code>sync/atomic</code> 패키지를 사용하여 살펴보겠습니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -74,7 +74,7 @@
         
         <tr>
           <td class="docs">
-            <p>We'll use an unsigned integer to represent our(always-positive) counter.</p>
+            <p>(항상 양수인) 카운터를 나타내기 위해 부호 없는 정수를 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -87,7 +87,7 @@
         
         <tr>
           <td class="docs">
-            <p>To simulate concurrent updates, we'll start 50goroutines that each increment the counter aboutonce a millisecond.</p>
+            <p>동시 업데이트를 시뮬레이션 하기 위해, 1 밀리초마다 카운터를 증가시키는 고루틴을 50개 띄웁니다.</p>
 
           </td>
           <td class="code leading">
@@ -102,7 +102,7 @@
         
         <tr>
           <td class="docs">
-            <p>To atomically increment the counter weuse <code>AddUint64</code>, giving it the memoryaddress of our <code>ops</code> counter with the<code>&amp;</code> syntax.</p>
+            <p>카운터를 원자적으로 증가시키기 위해 <code>ops</code> 카운터의 메모리 주소를 전달하여 <code>AddUint64</code>를 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -115,7 +115,7 @@
         
         <tr>
           <td class="docs">
-            <p>Wait a bit between increments.</p>
+            <p>증가 사이를 조금 대기합니다.</p>
 
           </td>
           <td class="code leading">
@@ -131,7 +131,7 @@
         
         <tr>
           <td class="docs">
-            <p>Wait a second to allow some ops to accumulate.</p>
+            <p>ops가 누적될 수 있도록 1초간 대기합니다.</p>
 
           </td>
           <td class="code leading">
@@ -144,7 +144,7 @@
         
         <tr>
           <td class="docs">
-            <p>In order to safely use the counter while it's stillbeing updated by other goroutines, we extract acopy of the current value into <code>opsFinal</code> via<code>LoadUint64</code>. As above we need to give thisfunction the memory address <code>&amp;ops</code> from which tofetch the value.</p>
+            <p>카운터가 다른 고루틴에 의해 증가되는 도중에 카운터를 안전하게 사용하기위해, <code>LoadUint64</code>를 사용하여 현재값의 복사본을 <code>opsFinal</code>로 가져옵니다. 위에서도 보았듯이 값을 페치하기 위해 <code>&amp;ops</code>의 메모리 주소를 전달합니다.</p>
 
           </td>
           <td class="code">
@@ -163,7 +163,7 @@
         
         <tr>
           <td class="docs">
-            <p>Running the program shows that we executed about40,000 operations.</p>
+            <p>프로그램을 실행하면 약 40,000번의 연산이 실행되었음을 보여줍니다.</p>
 
           </td>
           <td class="code leading">
@@ -177,7 +177,7 @@
         
         <tr>
           <td class="docs">
-            <p>Next we'll look at mutexes, another tool for managingstate.</p>
+            <p>다음 장에선 상태를 관리하는 또 다른 도구인 뮤텍스를 살펴보겠습니다.</p>
 
           </td>
           <td class="code empty">

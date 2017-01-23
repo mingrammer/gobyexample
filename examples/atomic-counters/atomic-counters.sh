@@ -1,7 +1,5 @@
-# Running the program shows that we executed about
-# 40,000 operations.
+# 프로그램을 실행하면 약 40,000번의 연산이 실행되었음을 보여줍니다.
 $ go run atomic-counters.go
 ops: 41419
 
-# Next we'll look at mutexes, another tool for managing
-# state.
+# 다음 장에선 상태를 관리하는 또 다른 도구인 뮤텍스를 살펴보겠습니다.

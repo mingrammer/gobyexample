@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>Sometimes we'll want to sort a collection by somethingother than its natural order. For example, suppose wewanted to sort strings by their length instead ofalphabetically. Here's an example of custom sortsin Go.</p>
+            <p>가끔 일반적인 순서가 아닌 특정한 순서로 컬렉션을 정렬하고 싶을때가 있습니다. 예를 들면, 문자열들을 알파벳 순서가 아닌 길이를 기준으로 정렬하고 싶은 경우가 있습니다. 이번 장에 Go에서의 커스텀 정렬 예시가 있습니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -61,7 +61,7 @@
         
         <tr>
           <td class="docs">
-            <p>In order to sort by a custom function in Go, we need acorresponding type. Here we've created a <code>ByLength</code>type that is just an alias for the builtin <code>[]string</code>type.</p>
+            <p>Go에서 커스텀 함수로 정렬을 하려면, 그에 해당하는 타입이 필요합니다. 우리는 여기서 내장 타입인 <code>[]string</code>의 alias인 <code>ByLength</code>라는 타입을 만들었습니다.</p>
 
           </td>
           <td class="code leading">
@@ -74,7 +74,7 @@
         
         <tr>
           <td class="docs">
-            <p>We implement <code>sort.Interface</code> - <code>Len</code>, <code>Less</code>, and<code>Swap</code> - on our type so we can use the <code>sort</code> package'sgeneric <code>Sort</code> function. <code>Len</code> and <code>Swap</code>will usually be similar across types and <code>Less</code> willhold the actual custom sorting logic. In our case wewant to sort in order of increasing string length, sowe use <code>len(s[i])</code> and <code>len(s[j])</code> here.</p>
+            <p>우리가 정의한 타입에 <code>sort.Interface</code> - <code>Len</code>, <code>Less</code> 그리고 <code>Swap</code>를 구현하면 <code>sort</code> 패키지의 제네릭 <code>Sort</code> 함수를 사용할 수 있습니다. <code>Len</code> 그리고 <code>Swap</code>은 일반적으로 타입에 따라 유사하며 <code>Less</code>가 실제 커스텀 정렬 로직을 갖습니다. 우리의 경우 문자열 길이가 증가하는 순서로 정렬을 하고자 하므로, <code>len(s[i])</code>와 <code>len(s[j])</code>를 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -95,7 +95,7 @@
         
         <tr>
           <td class="docs">
-            <p>With all of this in place, we can now implement ourcustom sort by casting the original <code>fruits</code> slice to<code>ByLength</code>, and then use <code>sort.Sort</code> on that typedslice.</p>
+            <p>구현한 것들을 가지고 원래의 <code>fruits</code> 슬라이스를 <code>ByLength</code>로 캐스팅하고 여기에 <code>sort.Sort</code>를 사용함으로써 우리는 커스텀 정렬을 구현할 수 있습니다.</p>
 
           </td>
           <td class="code">
@@ -116,7 +116,7 @@
         
         <tr>
           <td class="docs">
-            <p>Running our program shows a list sorted by stringlength, as desired.</p>
+            <p>프로그램을 실행하면 우리가 원하던대로 문자열 길이를 기준으로 정렬된 리스트가 보여집니다.</p>
 
           </td>
           <td class="code leading">
@@ -130,7 +130,7 @@
         
         <tr>
           <td class="docs">
-            <p>By following this same pattern of creating a customtype, implementing the three <code>Interface</code> methods on thattype, and then calling sort.Sort on a collection of thatcustom type, we can sort Go slices by arbitraryfunctions.</p>
+            <p>커스텀 타입을 생성하고, 해당 타입에 세 개의 <code>Interface</code> 메서드를 구현한 다음 커스텀 타입의 컬렉션에 sort.Sort를 호출하는 패턴을 따르면 어떤 함수로도 Go 슬라이스를 정렬할 수 있습니다.</p>
 
           </td>
           <td class="code empty">

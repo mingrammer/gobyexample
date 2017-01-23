@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>We often need our programs to perform operations oncollections of data, like selecting all items thatsatisfy a given predicate or mapping all items to a newcollection with a custom function.</p>
+            <p>종종 프로그램이 데이터 컬렉션 위에서 작업을 수행해야하는 경우가 있습니다. 가령, 주어진 조건을 만족하는 모든 항목을 선택하거나 모든 항목을 커스텀 함수를 가지고 새 컬렉션으로 매핑하는 경우가 있습니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -36,7 +36,7 @@
         
         <tr>
           <td class="docs">
-            <p>In some languages it's idiomatic to use <a href="http://en.wikipedia.org/wiki/Generic_programming">generic</a>data structures and algorithms. Go does not supportgenerics; in Go it's common to provide collectionfunctions if and when they are specifically needed foryour program and data types.</p>
+            <p>몇몇 언어에서는 <a href="http://en.wikipedia.org/wiki/Generic_programming">generic</a> 자료 구조와 알고리즘을 사용하는게 일반적입니다. Go는 제네릭을 지원하지 않습니다. Go에선 여러분의 프로그램과 데이터 타입에 특별히 필요한 경우 컬렉션 함수를 제공하는게 일반적입니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -47,7 +47,7 @@
         
         <tr>
           <td class="docs">
-            <p>Here are some example collection functions for slicesof <code>strings</code>. You can use these examples to build yourown functions. Note that in some cases it may beclearest to just inline the collection-manipulatingcode directly, instead of creating and calling ahelper function.</p>
+            <p>여기에 <code>strings</code>의 슬라이스를 위한 몇가지 컬렉션 함수 예시가 있습니다. 여러분만의 함수를 만들기 위해 이 예시들을 사용할 수 있습니다. 어떤 경우엔 헬퍼 함수를 만들고 호출하는 대신 컬렉션 조작 코드를 직접 작성하는게 가장 명확할 수도 있습니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -83,7 +83,7 @@
         
         <tr>
           <td class="docs">
-            <p>Returns the first index of the target string <code>t</code>, or-1 if no match is found.</p>
+            <p>문자열 <code>t</code>의 첫 위치를 반환하며 매칭이 없을시에는 -1을 반환합니다.</p>
 
           </td>
           <td class="code leading">
@@ -103,7 +103,7 @@
         
         <tr>
           <td class="docs">
-            <p>Returns <code>true</code> if the target string t is in theslice.</p>
+            <p>문자열 t가 슬라이스에 존재하면 <code>true</code>를 반환합니다.</p>
 
           </td>
           <td class="code leading">
@@ -118,7 +118,7 @@
         
         <tr>
           <td class="docs">
-            <p>Returns <code>true</code> if one of the strings in the slicesatisfies the predicate <code>f</code>.</p>
+            <p>슬라이스의 문자열중 하나가 조건 <code>f</code>를 만족하면 <code>true</code>를 반환합니다.</p>
 
           </td>
           <td class="code leading">
@@ -138,7 +138,7 @@
         
         <tr>
           <td class="docs">
-            <p>Returns <code>true</code> if all of the strings in the slicesatisfy the predicate <code>f</code>.</p>
+            <p>슬라이스의 문자열 모두가 조건 <code>f</code>를 만족하면 <code>true</code>를 반환합니다.</p>
 
           </td>
           <td class="code leading">
@@ -158,7 +158,7 @@
         
         <tr>
           <td class="docs">
-            <p>Returns a new slice containing all strings in theslice that satisfy the predicate <code>f</code>.</p>
+            <p>슬라이스에서 조건 <code>f</code>를 만족하는 모든 문자열을 포함하는 새로운 슬라이스를 반환합니다.</p>
 
           </td>
           <td class="code leading">
@@ -179,7 +179,7 @@
         
         <tr>
           <td class="docs">
-            <p>Returns a new slice containing the results of applyingthe function <code>f</code> to each string in the original slice.</p>
+            <p>기존 슬라이스에 있는 각각의 문자열에 함수 <code>f</code>를 적용한 결괏값들을 포함하는 새로운 슬라이스를 반환합니다.</p>
 
           </td>
           <td class="code leading">
@@ -210,7 +210,7 @@
         
         <tr>
           <td class="docs">
-            <p>Here we try out our various collection functions.</p>
+            <p>다양한 컬렉션 함수를 사용해봅시다.</p>
 
           </td>
           <td class="code leading">
@@ -289,7 +289,7 @@
         
         <tr>
           <td class="docs">
-            <p>The above examples all used anonymous functions,but you can also use named functions of the correcttype.</p>
+            <p>위의 에시 모두 익명함수를 사용했지만, 올바른 타입을 가진 명명된 함수를 사용할 수도 있습니다.</p>
 
           </td>
           <td class="code leading">

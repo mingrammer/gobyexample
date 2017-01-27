@@ -1,6 +1,5 @@
-// Go offers excellent support for string formatting in
-// the `printf` tradition. Here are some examples of
-// common string formatting tasks.
+// Go는 `printf` 전통에서 문자열 포맷팅을 훌륭하게 제공합니다.
+//  여기에 일반적인 문자열 포맷팅 예시가 몇 가지 있습니다.
 
 package main
 
@@ -13,96 +12,78 @@ type point struct {
 
 func main() {
 
-	// Go offers several printing "verbs" designed to
-	// format general Go values. For example, this prints
-	// an instance of our `point` struct.
+	// Go는 일반적인 값들을 포맷팅 하기 위해 설계된 몇 가지 출력 "verbs"를 제공합니다.
+	//  예를 들어, 다음은 `point` 구조체의 인스턴스를 출력합니다.
 	p := point{1, 2}
 	fmt.Printf("%v\n", p)
 
-	// If the value is a struct, the `%+v` variant will
-	// include the struct's field names.
+	// 값이 구조체인 경우, `%+v` 변형은 구조체의 필드명까지 포함합니다.
 	fmt.Printf("%+v\n", p)
 
-	// The `%#v` variant prints a Go syntax representation
-	// of the value, i.e. the source code snippet that
-	// would produce that value.
+	// `%#v` 변형은 값의 Go 구문 표현 즉, 해당 값을 생성하는 소스코드 스니펫을 출력합니다.
 	fmt.Printf("%#v\n", p)
 
-	// To print the type of a value, use `%T`.
+	// 값의 타입을 출력하기 위해선, `%T`를 사용합니다.
 	fmt.Printf("%T\n", p)
 
-	// Formatting booleans is straight-forward.
+	// 불리언 포맷팅은 직관적입니다.
 	fmt.Printf("%t\n", true)
 
-	// There are many options for formatting integers.
-	// Use `%d` for standard, base-10 formatting.
+	// 정수 포맷팅에는 여러가지 옵션이 있습니다.
+	//  표준적인 10진수 포맷팅은 `%d`를 사용합니다.
 	fmt.Printf("%d\n", 123)
 
-	// This prints a binary representation.
+	// 다음은 바이너리 표현을 출력합니다.
 	fmt.Printf("%b\n", 14)
 
-	// This prints the character corresponding to the
-	// given integer.
+	// 다음은 주어진 정수에 해당하는 문자를 출력합니다.
 	fmt.Printf("%c\n", 33)
 
-	// `%x` provides hex encoding.
+	// `%x`는 16진수 인코딩을 제공합니다.
 	fmt.Printf("%x\n", 456)
 
-	// There are also several formatting options for
-	// floats. For basic decimal formatting use `%f`.
+	// 실수에 대해서도 몇 가지 포맷팅 옵션이 있습니다.
+	//  기본적인 십진수 포맷팅에 대해서는 `%f`를 사용합니다.
 	fmt.Printf("%f\n", 78.9)
 
-	// `%e` and `%E` format the float in (slightly
-	// different versions of) scientific notation.
+	// `%e`와 `%E`(약간 다른 버전인)는 실수를 과학적 표기법으로 포맷팅합니다.
 	fmt.Printf("%e\n", 123400000.0)
 	fmt.Printf("%E\n", 123400000.0)
 
-	// For basic string printing use `%s`.
+	// 기본적인 문자열 출력에는 `%s`를 사용합니다.
 	fmt.Printf("%s\n", "\"string\"")
 
-	// To double-quote strings as in Go source, use `%q`.
+	// Go 소스에서와 같이 문자열을 쌍따옴표로 묶으려면, `%q`를 사용합니다.
 	fmt.Printf("%q\n", "\"string\"")
 
-	// As with integers seen earlier, `%x` renders
-	// the string in base-16, with two output characters
-	// per byte of input.
+	// 앞에서 본 정수와 마찬가지로, `x`는 입력값의 바이트당 두 개의 출력문자와 함께 문자열을 16진수로 렌더링합니다.
 	fmt.Printf("%x\n", "hex this")
 
-	// To print a representation of a pointer, use `%p`.
+	// 포인터의 표현(메모리 표현)을 출력하기 위해선, `%p`를 사용합니다.
 	fmt.Printf("%p\n", &p)
 
-	// When formatting numbers you will often want to
-	// control the width and precision of the resulting
-	// figure. To specify the width of an integer, use a
-	// number after the `%` in the verb. By default the
-	// result will be right-justified and padded with
-	// spaces.
+	// 숫자를 포맷팅할때 결과 형태의 너비와 정확도를 조정하고 싶을때가 종종 있습니다.
+	//  정수의 너비를 지정하려면, 숫자를 `%` 다음에 씁니다. 기본값으로 결과는 우측 정렬이며 공백으로 채워집니다.
 	fmt.Printf("|%6d|%6d|\n", 12, 345)
 
-	// You can also specify the width of printed floats,
-	// though usually you'll also want to restrict the
-	// decimal precision at the same time with the
-	// width.precision syntax.
+	// 출력된 실수에 너비를 지정할 수도 있지만, 일반적으로는 windth.precision 구문을 사용해 정밀도를 제한하고자 합니다.
 	fmt.Printf("|%6.2f|%6.2f|\n", 1.2, 3.45)
 
-	// To left-justify, use the `-` flag.
+	// 좌측 정렬을 위해선, `-` 플래그를 사용합니다.
 	fmt.Printf("|%-6.2f|%-6.2f|\n", 1.2, 3.45)
 
-	// You may also want to control width when formatting
-	// strings, especially to ensure that they align in
-	// table-like output. For basic right-justified width.
+	// 문자열을 포맷팅할 때, 특히 테이블같은 형태로 정렬하기 위해 너비를 조정하고 싶을때도 있습니다.
+	//  다음은 기본적인 우측 정렬 너비의 예입니다.
 	fmt.Printf("|%6s|%6s|\n", "foo", "b")
 
-	// To left-justify use the `-` flag as with numbers.
+	// 숫자에서와 마찬가지로 좌측 정렬을 위해선 `-` 플래그를 사용합니다.
 	fmt.Printf("|%-6s|%-6s|\n", "foo", "b")
 
-	// So far we've seen `Printf`, which prints the
-	// formatted string to `os.Stdout`. `Sprintf` formats
-	// and returns a string without printing it anywhere.
+	// 이제까지 우린 `os.Stdout`에 포맷팅된 문자열을 출력하는 `Printf`를 살펴봤습니다.
+	//  `Sprintf`는 문자열을 출력하지 않고 이를 포맷팅 한 후 반환합니다.
 	s := fmt.Sprintf("a %s", "string")
 	fmt.Println(s)
 
-	// You can format+print to `io.Writers` other than
-	// `os.Stdout` using `Fprintf`.
+	// `Fprintf`를 사용하여 `os.Stdout` 이외의 다른 `io.Writers`를 포맷팅하고 출력할 수 있습니다.
 	fmt.Fprintf(os.Stderr, "an %s\n", "error")
 }

@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>Go offers excellent support for string formatting inthe <code>printf</code> tradition. Here are some examples ofcommon string formatting tasks.</p>
+            <p>Go는 <code>printf</code> 전통에서 문자열 포맷팅을 훌륭하게 제공합니다. 여기에 일반적인 문자열 포맷팅 예시가 몇 가지 있습니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -87,7 +87,7 @@
         
         <tr>
           <td class="docs">
-            <p>Go offers several printing &quot;verbs&quot; designed toformat general Go values. For example, this printsan instance of our <code>point</code> struct.</p>
+            <p>Go는 일반적인 값들을 포맷팅 하기 위해 설계된 몇 가지 출력 &quot;verbs&quot;를 제공합니다. 예를 들어, 다음은 <code>point</code> 구조체의 인스턴스를 출력합니다.</p>
 
           </td>
           <td class="code leading">
@@ -101,7 +101,7 @@
         
         <tr>
           <td class="docs">
-            <p>If the value is a struct, the <code>%+v</code> variant willinclude the struct's field names.</p>
+            <p>값이 구조체인 경우, <code>%+v</code> 변형은 구조체의 필드명까지 포함합니다.</p>
 
           </td>
           <td class="code leading">
@@ -114,7 +114,7 @@
         
         <tr>
           <td class="docs">
-            <p>The <code>%#v</code> variant prints a Go syntax representationof the value, i.e. the source code snippet thatwould produce that value.</p>
+            <p><code>%#v</code> 변형은 값의 Go 구문 표현 즉, 해당 값을 생성하는 소스코드 스니펫을 출력합니다.</p>
 
           </td>
           <td class="code leading">
@@ -127,7 +127,7 @@
         
         <tr>
           <td class="docs">
-            <p>To print the type of a value, use <code>%T</code>.</p>
+            <p>값의 타입을 출력하기 위해선, <code>%T</code>를 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -140,7 +140,7 @@
         
         <tr>
           <td class="docs">
-            <p>Formatting booleans is straight-forward.</p>
+            <p>불리언 포맷팅은 직관적입니다.</p>
 
           </td>
           <td class="code leading">
@@ -153,7 +153,7 @@
         
         <tr>
           <td class="docs">
-            <p>There are many options for formatting integers.Use <code>%d</code> for standard, base-10 formatting.</p>
+            <p>정수 포맷팅에는 여러가지 옵션이 있습니다. 표준적인 10진수 포맷팅은 <code>%d</code>를 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -166,7 +166,7 @@
         
         <tr>
           <td class="docs">
-            <p>This prints a binary representation.</p>
+            <p>다음은 바이너리 표현을 출력합니다.</p>
 
           </td>
           <td class="code leading">
@@ -179,7 +179,7 @@
         
         <tr>
           <td class="docs">
-            <p>This prints the character corresponding to thegiven integer.</p>
+            <p>다음은 주어진 정수에 해당하는 문자를 출력합니다.</p>
 
           </td>
           <td class="code leading">
@@ -192,7 +192,7 @@
         
         <tr>
           <td class="docs">
-            <p><code>%x</code> provides hex encoding.</p>
+            <p><code>%x</code>는 16진수 인코딩을 제공합니다.</p>
 
           </td>
           <td class="code leading">
@@ -205,7 +205,7 @@
         
         <tr>
           <td class="docs">
-            <p>There are also several formatting options forfloats. For basic decimal formatting use <code>%f</code>.</p>
+            <p>실수에 대해서도 몇 가지 포맷팅 옵션이 있습니다. 기본적인 십진수 포맷팅에 대해서는 <code>%f</code>를 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -218,7 +218,7 @@
         
         <tr>
           <td class="docs">
-            <p><code>%e</code> and <code>%E</code> format the float in (slightlydifferent versions of) scientific notation.</p>
+            <p><code>%e</code>와 <code>%E</code>(약간 다른 버전인)는 실수를 과학적 표기법으로 포맷팅합니다.</p>
 
           </td>
           <td class="code leading">
@@ -232,7 +232,7 @@
         
         <tr>
           <td class="docs">
-            <p>For basic string printing use <code>%s</code>.</p>
+            <p>기본적인 문자열 출력에는 <code>%s</code>를 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -245,7 +245,7 @@
         
         <tr>
           <td class="docs">
-            <p>To double-quote strings as in Go source, use <code>%q</code>.</p>
+            <p>Go 소스에서와 같이 문자열을 쌍따옴표로 묶으려면, <code>%q</code>를 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -258,7 +258,7 @@
         
         <tr>
           <td class="docs">
-            <p>As with integers seen earlier, <code>%x</code> rendersthe string in base-16, with two output charactersper byte of input.</p>
+            <p>앞에서 본 정수와 마찬가지로, <code>x</code>는 입력값의 바이트당 두 개의 출력문자와 함께 문자열을 16진수로 렌더링합니다.</p>
 
           </td>
           <td class="code leading">
@@ -271,7 +271,7 @@
         
         <tr>
           <td class="docs">
-            <p>To print a representation of a pointer, use <code>%p</code>.</p>
+            <p>포인터의 표현(메모리 표현)을 출력하기 위해선, <code>%p</code>를 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -284,7 +284,7 @@
         
         <tr>
           <td class="docs">
-            <p>When formatting numbers you will often want tocontrol the width and precision of the resultingfigure. To specify the width of an integer, use anumber after the <code>%</code> in the verb. By default theresult will be right-justified and padded withspaces.</p>
+            <p>숫자를 포맷팅할때 결과 형태의 너비와 정확도를 조정하고 싶을때가 종종 있습니다. 정수의 너비를 지정하려면, 숫자를 <code>%</code> 다음에 씁니다. 기본값으로 결과는 우측 정렬이며 공백으로 채워집니다.</p>
 
           </td>
           <td class="code leading">
@@ -297,7 +297,7 @@
         
         <tr>
           <td class="docs">
-            <p>You can also specify the width of printed floats,though usually you'll also want to restrict thedecimal precision at the same time with thewidth.precision syntax.</p>
+            <p>출력된 실수에 너비를 지정할 수도 있지만, 일반적으로는 windth.precision 구문을 사용해 정밀도를 제한하고자 합니다.</p>
 
           </td>
           <td class="code leading">
@@ -310,7 +310,7 @@
         
         <tr>
           <td class="docs">
-            <p>To left-justify, use the <code>-</code> flag.</p>
+            <p>좌측 정렬을 위해선, <code>-</code> 플래그를 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -323,7 +323,7 @@
         
         <tr>
           <td class="docs">
-            <p>You may also want to control width when formattingstrings, especially to ensure that they align intable-like output. For basic right-justified width.</p>
+            <p>문자열을 포맷팅할 때, 특히 테이블같은 형태로 정렬하기 위해 너비를 조정하고 싶을때도 있습니다. 다음은 기본적인 우측 정렬 너비의 예입니다.</p>
 
           </td>
           <td class="code leading">
@@ -336,7 +336,7 @@
         
         <tr>
           <td class="docs">
-            <p>To left-justify use the <code>-</code> flag as with numbers.</p>
+            <p>숫자에서와 마찬가지로 좌측 정렬을 위해선 <code>-</code> 플래그를 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -349,7 +349,7 @@
         
         <tr>
           <td class="docs">
-            <p>So far we've seen <code>Printf</code>, which prints theformatted string to <code>os.Stdout</code>. <code>Sprintf</code> formatsand returns a string without printing it anywhere.</p>
+            <p>이제까지 우린 <code>os.Stdout</code>에 포맷팅된 문자열을 출력하는 <code>Printf</code>를 살펴봤습니다. <code>Sprintf</code>는 문자열을 출력하지 않고 이를 포맷팅 한 후 반환합니다.</p>
 
           </td>
           <td class="code leading">
@@ -363,7 +363,7 @@
         
         <tr>
           <td class="docs">
-            <p>You can format+print to <code>io.Writers</code> other than<code>os.Stdout</code> using <code>Fprintf</code>.</p>
+            <p><code>Fprintf</code>를 사용하여 <code>os.Stdout</code> 이외의 다른 <code>io.Writers</code>를 포맷팅하고 출력할 수 있습니다.</p>
 
           </td>
           <td class="code">

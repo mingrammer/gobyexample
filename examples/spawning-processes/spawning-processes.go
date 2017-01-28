@@ -1,9 +1,8 @@
-// Sometimes our Go programs need to spawn other, non-Go
-// processes. For example, the syntax highlighting on this
-// site is [implemented](https://github.com/mmcgrana/gobyexample/blob/master/tools/generate.go)
-// by spawning a [`pygmentize`](http://pygments.org/)
-// process from a Go program. Let's look at a few examples
-// of spawning processes from Go.
+// 간혹 우리의 Go 프로그램이 다른 Go가 아닌 프로세스를 띄워야 할
+//  때가 있습니다. 예를 들어, 이 페이지의 syntax highlighting은
+//  [`pygmentize`](http://pygments.org/)를 Go 프로그램에서 띄우는 방식으로
+//  [구현](https://github.com/mmcgrana/gobyexample/blob/master/tools/generate.go)
+// 되었습니다. Go에서 다른 프로세스를 띄우는 몇몇 예제를 살펴봅시다.
 
 package main
 

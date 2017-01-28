@@ -43,7 +43,7 @@ Defer->지연
 Collection Functions->컬렉션 함수
 String Functions->문자열 함수
 String Formatting->문자열 포맷팅
-Regular Expressions->정규식
+Regular Expressions->정규표현식
 JSON
 Time->시간
 Epoch->타임스탬프

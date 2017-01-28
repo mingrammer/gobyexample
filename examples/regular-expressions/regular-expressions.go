@@ -1,4 +1,4 @@
-// Go는 [regular expressions(정규표현식)](http://en.wikipedia.org/wiki/Regular_expression)를 위한 내장 기능을 지원합니다.
+// Go는 [정규표현식(regular expressions)](http://en.wikipedia.org/wiki/Regular_expression)를 위한 내장 기능을 지원합니다.
 //  여기에 Go에서의 일반적인 정규식 관련 작업의 몇 가지 예시가 있습니다.
 
 package main

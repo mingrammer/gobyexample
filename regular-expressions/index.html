@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>Go offers built-in support for <a href="http://en.wikipedia.org/wiki/Regular_expression">regular expressions</a>.Here are some examples of  common regexp-related tasksin Go.</p>
+            <p>Go는 <a href="http://en.wikipedia.org/wiki/Regular_expression">regular expressions(정규표현식)</a>를 위한 내장 기능을 지원합니다. 여기에 Go에서의 일반적인 정규식 관련 작업의 몇 가지 예시가 있습니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -74,7 +74,7 @@
         
         <tr>
           <td class="docs">
-            <p>This tests whether a pattern matches a string.</p>
+            <p>다음은 패턴이 문자열과 일치하는지를 검사합니다.</p>
 
           </td>
           <td class="code leading">
@@ -88,7 +88,7 @@
         
         <tr>
           <td class="docs">
-            <p>Above we used a string pattern directly, but forother regexp tasks you'll need to <code>Compile</code> anoptimized <code>Regexp</code> struct.</p>
+            <p>위에서는 문자열 패턴을 바로 사용했지만, 다른 정규식 작업을 위해선 최적화된 <code>Regexp</code> 구조체를 Compile` 해야합니다.</p>
 
           </td>
           <td class="code leading">
@@ -101,7 +101,7 @@
         
         <tr>
           <td class="docs">
-            <p>Many methods are available on these structs. Here'sa match test like we saw earlier.</p>
+            <p>이 구조체에선 많은 메서드를 사용할 수 있습니다. 다음은 이전에 봤던것과 같은 일치 검사입니다.</p>
 
           </td>
           <td class="code leading">
@@ -114,7 +114,7 @@
         
         <tr>
           <td class="docs">
-            <p>This finds the match for the regexp.</p>
+            <p>다음은 정규식과 일치하는 문자열을 찾습니다.</p>
 
           </td>
           <td class="code leading">
@@ -127,7 +127,7 @@
         
         <tr>
           <td class="docs">
-            <p>This also finds the first match but returns thestart and end indexes for the match instead of thematching text.</p>
+            <p>다음 메서드 또한 첫번째로 매칭되는 문자열을 찾지만 일치하는 텍스트 대신 일치하는 텍스트의 첫 인덱스와 마지막 인덱스를 반환합니다.</p>
 
           </td>
           <td class="code leading">
@@ -140,7 +140,7 @@
         
         <tr>
           <td class="docs">
-            <p>The <code>Submatch</code> variants include information aboutboth the whole-pattern matches and the submatcheswithin those matches. For example this will returninformation for both <code>p([a-z]+)ch</code> and <code>([a-z]+)</code>.</p>
+            <p><code>Submatch</code> 변형은 전체 패턴 일치와 해당 일치의 부분 일치에 대한 정보를 모두 포함합니다. 예를 들어 다음은 <code>p([a-z]+)ch</code>와 <code>([a-z]+)</code>에 대한 정보를 모두 반환합니다.</p>
 
           </td>
           <td class="code leading">
@@ -153,7 +153,7 @@
         
         <tr>
           <td class="docs">
-            <p>Similarly this will return information about theindexes of matches and submatches.</p>
+            <p>유사하게 다음은 전체 일치와 부분 일치의 인덱스에 대한 정보를 반환합니다.</p>
 
           </td>
           <td class="code leading">
@@ -166,7 +166,7 @@
         
         <tr>
           <td class="docs">
-            <p>The <code>All</code> variants of these functions apply to allmatches in the input, not just the first. Forexample to find all matches for a regexp.</p>
+            <p><code>All</code> 변형은 입력값의 첫번째만이 아닌 모든 일치 작업에 적용됩니다. 예를 들면 정규식에 대해 모든 일치 항목들을 찾는 경우가 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -179,7 +179,7 @@
         
         <tr>
           <td class="docs">
-            <p>These <code>All</code> variants are available for the otherfunctions we saw above as well.</p>
+            <p>다음의 <code>All</code> 변형은 위에서 본것과 마찬가지로 다른 함수에 대해 사용할 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -193,7 +193,7 @@
         
         <tr>
           <td class="docs">
-            <p>Providing a non-negative integer as the secondargument to these functions will limit the numberof matches.</p>
+            <p>다음 함수의 두번째 인자에 음이 아닌 정수를 전달하면 일치 항목의 갯수를 제한합니다.</p>
 
           </td>
           <td class="code leading">
@@ -206,7 +206,7 @@
         
         <tr>
           <td class="docs">
-            <p>Our examples above had string arguments and usednames like <code>MatchString</code>. We can also provide<code>[]byte</code> arguments and drop <code>String</code> from thefunction name.</p>
+            <p>위의 예시들은 문자열 인자를 사용하며 <code>MatchString</code>과 같은 이름을 사용했습니다. 함수명에서 <code>String</code>을 없애고 인자로 <code>[]byte</code>를 전달할 수도 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -219,7 +219,7 @@
         
         <tr>
           <td class="docs">
-            <p>When creating constants with regular expressionsyou can use the <code>MustCompile</code> variation of<code>Compile</code>. A plain <code>Compile</code> won't work forconstants because it has 2 return values.</p>
+            <p>정규표현식으로 상수를 만들때 <code>Compile</code>의 변형인 <code>MustCompile</code>을 사용할 수 있습니다. 일반 <code>Compile</code>은 반환값이 2개라 상수로 사용할 수 없습니다.</p>
 
           </td>
           <td class="code leading">
@@ -233,7 +233,7 @@
         
         <tr>
           <td class="docs">
-            <p>The <code>regexp</code> package can also be used to replacesubsets of strings with other values.</p>
+            <p><code>regexp</code> 패키지는 부분문자열을 다른값으로 바꾸는데 사용할 수도 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -246,7 +246,7 @@
         
         <tr>
           <td class="docs">
-            <p>The <code>Func</code> variant allows you to transform matchedtext with a given function.</p>
+            <p><code>Func</code> 변형을 사용하여 주어진 함수로 일치된 텍스트를 변환시킬 수 있습니다.</p>
 
           </td>
           <td class="code">

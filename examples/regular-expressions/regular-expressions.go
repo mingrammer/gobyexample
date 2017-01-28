@@ -1,6 +1,5 @@
-// Go offers built-in support for [regular expressions](http://en.wikipedia.org/wiki/Regular_expression).
-// Here are some examples of  common regexp-related tasks
-// in Go.
+// Go는 [regular expressions(정규표현식)](http://en.wikipedia.org/wiki/Regular_expression)를 위한 내장 기능을 지원합니다.
+//  여기에 Go에서의 일반적인 정규식 관련 작업의 몇 가지 예시가 있습니다.
 
 package main
 
@@ -10,71 +9,54 @@ import "regexp"
 
 func main() {
 
-	// This tests whether a pattern matches a string.
+	// 다음은 패턴이 문자열과 일치하는지를 검사합니다.
 	match, _ := regexp.MatchString("p([a-z]+)ch", "peach")
 	fmt.Println(match)
 
-	// Above we used a string pattern directly, but for
-	// other regexp tasks you'll need to `Compile` an
-	// optimized `Regexp` struct.
+	// 위에서는 문자열 패턴을 바로 사용했지만, 다른 정규식 작업을 위해선 최적화된 `Regexp` 구조체를 Compile` 해야합니다.
 	r, _ := regexp.Compile("p([a-z]+)ch")
 
-	// Many methods are available on these structs. Here's
-	// a match test like we saw earlier.
+	// 이 구조체에선 많은 메서드를 사용할 수 있습니다.
+	//  다음은 이전에 봤던것과 같은 일치 검사입니다.
 	fmt.Println(r.MatchString("peach"))
 
-	// This finds the match for the regexp.
+	// 다음은 정규식과 일치하는 문자열을 찾습니다.
 	fmt.Println(r.FindString("peach punch"))
 
-	// This also finds the first match but returns the
-	// start and end indexes for the match instead of the
-	// matching text.
+	// 다음 메서드 또한 첫번째로 매칭되는 문자열을 찾지만 일치하는 텍스트 대신 일치하는 텍스트의 첫 인덱스와 마지막 인덱스를 반환합니다.
 	fmt.Println(r.FindStringIndex("peach punch"))
 
-	// The `Submatch` variants include information about
-	// both the whole-pattern matches and the submatches
-	// within those matches. For example this will return
-	// information for both `p([a-z]+)ch` and `([a-z]+)`.
+	// `Submatch` 변형은 전체 패턴 일치와 해당 일치의 부분 일치에 대한 정보를 모두 포함합니다.
+	//  예를 들어 다음은 `p([a-z]+)ch`와 `([a-z]+)`에 대한 정보를 모두 반환합니다.
 	fmt.Println(r.FindStringSubmatch("peach punch"))
 
-	// Similarly this will return information about the
-	// indexes of matches and submatches.
+	// 유사하게 다음은 전체 일치와 부분 일치의 인덱스에 대한 정보를 반환합니다.
 	fmt.Println(r.FindStringSubmatchIndex("peach punch"))
 
-	// The `All` variants of these functions apply to all
-	// matches in the input, not just the first. For
-	// example to find all matches for a regexp.
+	// `All` 변형은 입력값의 첫번째만이 아닌 모든 일치 작업에 적용됩니다.
+	//  예를 들면 정규식에 대해 모든 일치 항목들을 찾는 경우가 있습니다.
 	fmt.Println(r.FindAllString("peach punch pinch", -1))
 
-	// These `All` variants are available for the other
-	// functions we saw above as well.
+	// 다음의 `All` 변형은 위에서 본것과 마찬가지로 다른 함수에 대해 사용할 수 있습니다.
 	fmt.Println(r.FindAllStringSubmatchIndex(
 		"peach punch pinch", -1))
 
-	// Providing a non-negative integer as the second
-	// argument to these functions will limit the number
-	// of matches.
+	// 다음 함수의 두번째 인자에 음이 아닌 정수를 전달하면 일치 항목의 갯수를 제한합니다.
 	fmt.Println(r.FindAllString("peach punch pinch", 2))
 
-	// Our examples above had string arguments and used
-	// names like `MatchString`. We can also provide
-	// `[]byte` arguments and drop `String` from the
-	// function name.
+	// 위의 예시들은 문자열 인자를 사용하며 `MatchString`과 같은 이름을 사용했습니다.
+	//  함수명에서 `String`을 없애고 인자로 `[]byte`를 전달할 수도 있습니다.
 	fmt.Println(r.Match([]byte("peach")))
 
-	// When creating constants with regular expressions
-	// you can use the `MustCompile` variation of
-	// `Compile`. A plain `Compile` won't work for
-	// constants because it has 2 return values.
+	// 정규표현식으로 상수를 만들때 `Compile`의 변형인 `MustCompile`을 사용할 수 있습니다.
+	//  일반 `Compile`은 반환값이 2개라 상수로 사용할 수 없습니다.
 	r = regexp.MustCompile("p([a-z]+)ch")
 	fmt.Println(r)
 
-	// The `regexp` package can also be used to replace
-	// subsets of strings with other values.
+	// `regexp` 패키지는 부분문자열을 다른값으로 바꾸는데 사용할 수도 있습니다.
 	fmt.Println(r.ReplaceAllString("a peach", "<fruit>"))
 
-	// The `Func` variant allows you to transform matched
-	// text with a given function.
+	// `Func` 변형을 사용하여 주어진 함수로 일치된 텍스트를 변환시킬 수 있습니다.
 	in := []byte("a peach")
 	out := r.ReplaceAllFunc(in, bytes.ToUpper)
 	fmt.Println(string(out))

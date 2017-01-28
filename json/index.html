@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>Go offers built-in support for JSON encoding anddecoding, including to and from built-in and customdata types.</p>
+            <p>Go는 내장 및 커스텀 데이터 타입을 포함하여 JSON 인코딩 및 디코딩을 위한 내장 기능을 지원합니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -62,7 +62,7 @@
         
         <tr>
           <td class="docs">
-            <p>We'll use these two structs to demonstrate encoding anddecoding of custom types below.</p>
+            <p>아래에서 커스텀 타입에 대한 인코딩 및 디코딩을 시연하기 위해 다음의 두 구조체를 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -94,7 +94,7 @@
         
         <tr>
           <td class="docs">
-            <p>First we'll look at encoding basic data types toJSON strings. Here are some examples for atomicvalues.</p>
+            <p>우선 기본 데이터 타입을 JSON 문자열로 인코딩 해봅시다. 다음은 기본값들에 대한 몇 가지 예시입니다.</p>
 
           </td>
           <td class="code leading">
@@ -147,7 +147,7 @@
         
         <tr>
           <td class="docs">
-            <p>And here are some for slices and maps, which encodeto JSON arrays and objects as you'd expect.</p>
+            <p>그리고 다음은 예상대로 JSON 배열과 객체로 인코딩하는 슬라이스와 맵에 대한 예시입니다.</p>
 
           </td>
           <td class="code leading">
@@ -176,7 +176,7 @@
         
         <tr>
           <td class="docs">
-            <p>The JSON package can automatically encode yourcustom data types. It will only include exportedfields in the encoded output and will by defaultuse those names as the JSON keys.</p>
+            <p>JSON 패키지는 커스텀 데이터 타입을 자동으로 인코딩 할 수 있습니다. 이는 노출된 필드만 인코딩 출력값에 포함시키며 JSON 키의 기본값으로는 필드명을 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -193,7 +193,7 @@
         
         <tr>
           <td class="docs">
-            <p>You can use tags on struct field declarationsto customize the encoded JSON key names. Check thedefinition of <code>Response2</code> above to see an exampleof such tags.</p>
+            <p>JSON 키명을 커스터마이징 하기위해 구조체 필드 선언부에 태그를 사용할 수 있습니다. 위의 <code>Response2</code>의 정의를 보면 태그의 예를 볼 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -210,7 +210,7 @@
         
         <tr>
           <td class="docs">
-            <p>Now let's look at decoding JSON data into Govalues. Here's an example for a generic datastructure.</p>
+            <p>이제 JSON 데이터를 Go의 값으로 디코딩 해봅시다. 다음은 제네릭 데이터 구조의 예시입니다.</p>
 
           </td>
           <td class="code leading">
@@ -223,7 +223,7 @@
         
         <tr>
           <td class="docs">
-            <p>We need to provide a variable where the JSONpackage can put the decoded data. This<code>map[string]interface{}</code> will hold a map of stringsto arbitrary data types.</p>
+            <p>JSON 패키지가 디코딩 데이터를 저장할 수 있는 변수를 선언해야합니다. <code>map[string]interface{}</code>는 임의의 데이터 타입의 문자열 맵을 갖습니다.</p>
 
           </td>
           <td class="code leading">
@@ -236,7 +236,7 @@
         
         <tr>
           <td class="docs">
-            <p>Here's the actual decoding, and a check forassociated errors.</p>
+            <p>다음은 실제 디코딩이며, 관련 에러를 검사합니다.</p>
 
           </td>
           <td class="code leading">
@@ -252,7 +252,7 @@
         
         <tr>
           <td class="docs">
-            <p>In order to use the values in the decoded map,we'll need to cast them to their appropriate type.For example here we cast the value in <code>num</code> tothe expected <code>float64</code> type.</p>
+            <p>디코딩된 맵의 값을 사용하기 위해선, 적절한 타입으로 캐스팅 해야합니다. 예를 들어 다음은 <code>num</code> 값을 <code>float64</code> 타입으로 캐스팅합니다.</p>
 
           </td>
           <td class="code leading">
@@ -266,7 +266,7 @@
         
         <tr>
           <td class="docs">
-            <p>Accessing nested data requires a series ofcasts.</p>
+            <p>중첩된 데이터에 접근하기 위해선 연속적으로 캐스팅을 해야합니다.</p>
 
           </td>
           <td class="code leading">
@@ -281,7 +281,7 @@
         
         <tr>
           <td class="docs">
-            <p>We can also decode JSON into custom data types.This has the advantages of adding additionaltype-safety to our programs and eliminating theneed for type assertions when accessing the decodeddata.</p>
+            <p>JSON을 커스텀 데이터 타입으로 디코딩 할 수도 있습니다. 이는 프로그램에 추가적인 타입 안전성을 추가할 수 있다는 장점을 가지며 데이터에 접근하고 디코딩할 때 타입 단언(assertion)을 할 필요성을 없애줍니다.</p>
 
           </td>
           <td class="code leading">
@@ -298,7 +298,7 @@
         
         <tr>
           <td class="docs">
-            <p>In the examples above we always used bytes andstrings as intermediates between the data andJSON representation on standard out. We can alsostream JSON encodings directly to <code>os.Writer</code>s like<code>os.Stdout</code> or even HTTP response bodies.</p>
+            <p>위의 예시에서 데이터와 표준 출력상의 JSON 표현간의 매개체로 항상 바이트와 문자열을 사용했습니다. <code>os.Stdout</code>와 같은 <code>os.Writer</code>나 심지어는 HTTP 응답 바디에 직접 JSON 인코딩을 스트리밍 할 수도 있습니다.</p>
 
           </td>
           <td class="code">
@@ -344,7 +344,7 @@
         
         <tr>
           <td class="docs">
-            <p>We've covered the basic of JSON in Go here, but checkout the <a href="http://blog.golang.org/2011/01/json-and-go.html">JSON and Go</a>blog post and <a href="http://golang.org/pkg/encoding/json/">JSON package docs</a>for more.</p>
+            <p>Go에서의 JSON에 대한 기본적인 내용들을 살펴봤지만, 더 자세한건 <a href="http://blog.golang.org/2011/01/json-and-go.html">JSON and Go</a> 블로그 포스트와 <a href="http://golang.org/pkg/encoding/json/">JSON package docs</a>를 참조하세요.</p>
 
           </td>
           <td class="code empty">

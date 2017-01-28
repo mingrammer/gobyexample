@@ -21,5 +21,4 @@ false
 2012-10-31 15:50:13.793654 +0000 UTC
 2006-12-05 01:19:43.509120474 +0000 UTC
 
-# Next we'll look at the related idea of time relative to
-# the Unix epoch.
+# 다음으로 유닉스 Epoch과 관련된 시간과 관련된 아이디어를 살펴보겠습니다.

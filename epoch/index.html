@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>A common requirement in programs is getting the numberof seconds, milliseconds, or nanoseconds since the<a href="http://en.wikipedia.org/wiki/Unix_time">Unix epoch</a>.Here's how to do it in Go.</p>
+            <p>프로그램에서의 공통적인 요구사항은 <a href="http://en.wikipedia.org/wiki/Unix_time">Unix epoch</a> 이후로의 초, 밀리초 또는 나노초의 수를 얻는것입니다. Go에서 이를 구하는 방법이 있습니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -73,7 +73,7 @@
         
         <tr>
           <td class="docs">
-            <p>Use <code>time.Now</code> with <code>Unix</code> or <code>UnixNano</code> to getelapsed time since the Unix epoch in seconds ornanoseconds, respectively.</p>
+            <p><code>time.Now</code>를 사용하여 유닉스 epoch 이후로 경과된 시간을 각각 초 또는 나노초 단위로 구하기 위해 <code>Unix</code> 또는 <code>UnixNano</code>를 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -89,7 +89,7 @@
         
         <tr>
           <td class="docs">
-            <p>Note that there is no <code>UnixMillis</code>, so to get themilliseconds since epoch you'll need to manuallydivide from nanoseconds.</p>
+            <p>참고로, <code>UnixMillis</code>는 없기 때문에, 밀리초 단위로 구하려면 나노초값을 수동으로 나누어야합니다.</p>
 
           </td>
           <td class="code leading">
@@ -105,7 +105,7 @@
         
         <tr>
           <td class="docs">
-            <p>You can also convert integer seconds or nanosecondssince the epoch into the corresponding <code>time</code>.</p>
+            <p>epoch 이후의 초 또는 나노초 정수값을 해당하는 <code>time</code>으로 변환할 수도 있습니다.</p>
 
           </td>
           <td class="code">
@@ -142,7 +142,7 @@
         
         <tr>
           <td class="docs">
-            <p>Next we'll look at another time-related task: timeparsing and formatting.</p>
+            <p>다음으로 또 다른 시간 관련 작업을 살펴보겠습니다: 시간 파싱과 포맷팅</p>
 
           </td>
           <td class="code empty">

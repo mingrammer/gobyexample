@@ -6,5 +6,4 @@ $ go run epoch.go
 2012-10-31 16:13:58 +0000 UTC
 2012-10-31 16:13:58.292387 +0000 UTC
 
-# Next we'll look at another time-related task: time
-# parsing and formatting.
+# 다음으로 또 다른 시간 관련 작업을 살펴보겠습니다: 시간 파싱과 포맷팅

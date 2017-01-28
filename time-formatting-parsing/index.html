@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>Go supports time formatting and parsing viapattern-based layouts.</p>
+            <p>Go는 패턴 기반의 레이아웃을 통한 시간 포맷팅과 파싱을 지원합니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -74,7 +74,7 @@
         
         <tr>
           <td class="docs">
-            <p>Here's a basic example of formatting a timeaccording to RFC3339, using the corresponding layoutconstant.</p>
+            <p>다음은 RFC3339에 해당하는 레이아웃 상수를 사용하여 시간을 포맷팅하는 기본적인 예시입니다.</p>
 
           </td>
           <td class="code leading">
@@ -88,7 +88,7 @@
         
         <tr>
           <td class="docs">
-            <p>Time parsing uses the same layout values as <code>Format</code>.</p>
+            <p>시간 파싱은 <code>Format</code>과 동일한 레이아웃 값을 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -104,7 +104,7 @@
         
         <tr>
           <td class="docs">
-            <p><code>Format</code> and <code>Parse</code> use example-based layouts. Usuallyyou'll use a constant from <code>time</code> for these layouts, butyou can also supply custom layouts. Layouts must use thereference time <code>Mon Jan 2 15:04:05 MST 2006</code> to show thepattern with which to format/parse a given time/string.The example time must be exactly as shown: the year 2006,15 for the hour, Monday for the day of the week, etc.</p>
+            <p><code>Format</code>과 <code>Parse</code>는 예시 기반 레이아웃을 사용합니다. 보통 이 레이아웃들은 <code>time</code>에서의 상수를 사용하지만, 커스텀 레이아웃을 사용할 수도 있습니다. 레이아웃은 참조 시간 <code>Mon Jan 2 15:04:05 MST 2006</code>을 사용하여 주어진 시간/문자열을 포맷팅/파싱할 패턴을 표시해야합니다. 예시 시간은 다음에 표시된것과 정확히 일치해야합니다: 연도는 2006, 시간은 15, 요일은 월요일 등등.</p>
 
           </td>
           <td class="code leading">
@@ -122,7 +122,7 @@
         
         <tr>
           <td class="docs">
-            <p>For purely numeric representations you can alsouse standard string formatting with the extractedcomponents of the time value.</p>
+            <p>순전히 숫자로 표현하기 위해 시간값에서 추출한 컴포넌트와 표준 문자열 포맷팅을 사용할 수도 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -137,7 +137,7 @@
         
         <tr>
           <td class="docs">
-            <p><code>Parse</code> will return an error on malformed inputexplaining the parsing problem.</p>
+            <p><code>Parse</code>는 잘못된 형식의 입력값이 들어오면 에러를 반환하여 파싱 문제를 설명합니다.</p>
 
           </td>
           <td class="code">

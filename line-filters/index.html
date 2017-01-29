@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>A <em>line filter</em> is a common type of program that readsinput on stdin, processes it, and then prints somederived result to stdout. <code>grep</code> and <code>sed</code> are commonline filters.</p>
+            <p><em>라인 필터 (line filter)</em>는 stdin으로 입력을 읽고, 처리한 후, 나온 결괏값을 stdout으로 출력하는 일반적인 유형의 프로그램입니다. <code>grep</code>과 <code>sed</code>가 일반적인 라인 필터입니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -36,7 +36,7 @@
         
         <tr>
           <td class="docs">
-            <p>Here's an example line filter in Go that writes acapitalized version of all input text. You can use thispattern to write your own Go line filters.</p>
+            <p>다음은 모든 입력 텍스트의 대문자 버전을 작성하는 Go의 라인 필터 예제입니다. 여러분만의 Go 라인 필터를 작성하는데 이 패턴을 사용할 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -78,7 +78,7 @@
         
         <tr>
           <td class="docs">
-            <p>Wrapping the unbuffered <code>os.Stdin</code> with a bufferedscanner gives us a convenient <code>Scan</code> method thatadvances the scanner to the next token; which isthe next line in the default scanner.</p>
+            <p>버퍼링되지 않은 <code>os.Stdin</code>을 버퍼링된 스캐너로 래핑하는건 스캐너를 다음 토큰으로 진행시키는 편리한 <code>Scan</code> 메서드를 제공합니다. 기본 스캐너에서 다음 토큰은 다음 라인입니다.</p>
 
           </td>
           <td class="code leading">
@@ -91,7 +91,7 @@
         
         <tr>
           <td class="docs">
-            <p><code>Text</code> returns the current token, here the next line,from the input.</p>
+            <p><code>Text</code>는 입력에서 현재 토큰을 반환합니다. 여기선 다음 라인입니다.</p>
 
           </td>
           <td class="code leading">
@@ -116,7 +116,7 @@
         
         <tr>
           <td class="docs">
-            <p>Write out the uppercased line.</p>
+            <p>대문자로된 문자열을 라인에 씁니다.</p>
 
           </td>
           <td class="code leading">
@@ -130,7 +130,7 @@
         
         <tr>
           <td class="docs">
-            <p>Check for errors during <code>Scan</code>. End of file isexpected and not reported by <code>Scan</code> as an error.</p>
+            <p><code>Scan</code>중 에러를 체크합니다. 파일의 끝이 예상되며 <code>Scan</code>에 의한 에러로 보고되지 않습니다.</p>
 
           </td>
           <td class="code">
@@ -151,7 +151,7 @@
         
         <tr>
           <td class="docs">
-            <p>To try out our line filter, first make a file with a fewlowercase lines.</p>
+            <p>라인 필터를 실행해 보기위해, 몇 개의 소문자 라인들을 가진 파일을 생성합니다.</p>
 
           </td>
           <td class="code leading">
@@ -165,7 +165,7 @@
         
         <tr>
           <td class="docs">
-            <p>Then use the line filter to get uppercase lines.</p>
+            <p>다음으로 대문자 라인들을 얻기 위해 라인 필터를 사용합니다.</p>
 
           </td>
           <td class="code">

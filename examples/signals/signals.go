@@ -1,9 +1,10 @@
-// Sometimes we'd like our Go programs to intelligently
-// handle [Unix signals](http://en.wikipedia.org/wiki/Unix_signal).
-// For example, we might want a server to gracefully
-// shutdown when it receives a `SIGTERM`, or a command-line
-// tool to stop processing input if it receives a `SIGINT`.
-// Here's how to handle signals in Go with channels.
+// 가끔 우리는 Go 프로그램이 똑똑하게 
+//  [Unix signal](http://en.wikipedia.org/wiki/Unix_signal)
+//  을 처리해주길 바랍니다.
+//  예를 들어, `SIGTERM` signal을 받았을 때 적절하게 서버를
+//  종료하는 경우나 command-line 도구에서 `SIGINT`를 받았을 때
+//  프로세스를 멈추는 경우가 그런 경우입니다.
+//  여기서는 Go가 채널을 이용하여 signal을 다루는 것을 보도록 하겠습니다.
 
 package main
 
@@ -14,20 +15,19 @@ import "syscall"
 
 func main() {
 
-	// Go signal notification works by sending `os.Signal`
-	// values on a channel. We'll create a channel to
-	// receive these notifications (we'll also make one to
-	// notify us when the program can exit).
+  // Go의 signal 알림은 `os.Signal` 값을 채널에 보내는 방식으로 작동합니다.
+  //  이런 알림을 받는 채널을 하나 만들어봅시다.
+  //  (프로그램을 종료해도 될 때를 알려주는 채널도 만들어볼 것입니다.)
 	sigs := make(chan os.Signal, 1)
 	done := make(chan bool, 1)
 
-	// `signal.Notify` registers the given channel to
-	// receive notifications of the specified signals.
+  // `signal.Notify`는 우리가 지정한 signal을 받을 수 있는
+  //  채널을 받고 등록해줍니다.
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
 
-	// This goroutine executes a blocking receive for
-	// signals. When it gets one it'll print it out
-	// and then notify the program that it can finish.
+  // 이 goroutine은 signal을 받기 위한 블로킹 goroutine입니다.
+  //  Signal을 받으면 받은 signal을 출력하고 프로그램에
+  //  종료 가능하다고 알려줄 것입니다.
 	go func() {
 		sig := <-sigs
 		fmt.Println()
@@ -35,9 +35,10 @@ func main() {
 		done <- true
 	}()
 
-	// The program will wait here until it gets the
-	// expected signal (as indicated by the goroutine
-	// above sending a value on `done`) and then exit.
+  // 프로그램은 여기서 원하는 signal을 받을 때까지 기다릴 것입니다.
+  //  (위의 goroutine이 signal을 받으면 `done`에 값을 보내는 것에서
+  //  알 수 있습니다.)
+  //  값을 받으면, 종료합니다.
 	fmt.Println("awaiting signal")
 	<-done
 	fmt.Println("exiting")

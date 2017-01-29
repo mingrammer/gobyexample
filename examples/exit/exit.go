@@ -7,11 +7,11 @@ import "os"
 
 func main() {
 
-  // `defer`는 `os.Exit`를 이용할 때에는 _작동하지 않습니다._
-  // 그래서 이 `fmt.Println`은 절대로 호출되지 않을 것입니다.
+	// `defer`는 `os.Exit`를 이용할 때에는 _작동하지 않습니다._
+	//  그래서 이 `fmt.Println`은 절대로 호출되지 않을 것입니다.
 	defer fmt.Println("!")
 
-  // status 3으로 종료해봅시다.
+	// status 3으로 종료해봅시다.
 	os.Exit(3)
 }
 

@@ -1,4 +1,4 @@
-# 우리의 프로그램을 실행시키면 프로그램은 `ls`로 대체됩니다.
+# 프로그램을 실행시키면 프로그램은 `ls`로 대체됩니다.
 $ go run execing-processes.go
 total 16
 drwxr-xr-x  4 mark 136B Oct 3 16:29 .

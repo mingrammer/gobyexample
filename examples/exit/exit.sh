@@ -1,5 +1,5 @@
-#  만약 `exit.go`를 `go run`을 이용하여 실행시키면,
-# exit 값를 `go`가 가져가서 출력될 것입니다.
+# 만약 `exit.go`를 `go run`을 이용하여 실행시키면,
+#  exit 값를 `go`가 가져가서 출력될 것입니다.
 $ go run exit.go
 exit status 3
 

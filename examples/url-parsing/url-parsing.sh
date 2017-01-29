@@ -1,5 +1,4 @@
-# Running our URL parsing program shows all the different
-# pieces that we extracted.
+# URL 파싱 프로그램을 실행하면 추출한 모든 다른 URL 조각들을 보여쥽니다.
 $ go run url-parsing.go 
 postgres
 user:pass

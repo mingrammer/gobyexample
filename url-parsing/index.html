@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>URLs provide a <a href="http://adam.heroku.com/past/2010/3/30/urls_are_the_uniform_way_to_locate_resources/">uniform way to locate resources</a>.Here's how to parse URLs in Go.</p>
+            <p>URLs는 <a href="http://adam.heroku.com/past/2010/3/30/urls_are_the_uniform_way_to_locate_resources/">리소스를 찾을 수 있는 일관된 방법(uniform way to locate resources)</a>을 제공합니다. 여기에 Go에서 URLs를 파싱할 수 있는 방법이 있습니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -74,7 +74,7 @@
         
         <tr>
           <td class="docs">
-            <p>We'll parse this example URL, which includes ascheme, authentication info, host, port, path,query params, and query fragment.</p>
+            <p>다음의 스키마, 인증 정보, 호스트, 포트, 경로, 쿼리 파라미터, 그리고 쿼리 프레그먼트를 포함하고 있는 예시 URL을 파싱해보겠습니다.</p>
 
           </td>
           <td class="code leading">
@@ -87,7 +87,7 @@
         
         <tr>
           <td class="docs">
-            <p>Parse the URL and ensure there are no errors.</p>
+            <p>URL을 파싱하고 에러가 없는지를 확인합니다.</p>
 
           </td>
           <td class="code leading">
@@ -103,7 +103,7 @@
         
         <tr>
           <td class="docs">
-            <p>Accessing the scheme is straightforward.</p>
+            <p>스키마 접근은 간단합니다.</p>
 
           </td>
           <td class="code leading">
@@ -116,7 +116,7 @@
         
         <tr>
           <td class="docs">
-            <p><code>User</code> contains all authentication info; call<code>Username</code> and <code>Password</code> on this for individualvalues.</p>
+            <p><code>User</code>는 모든 인증 정보를 포함하고 있습니다. 각각의 값에 대해선 <code>Username</code>과 <code>Password</code>를 호출하면 됩니다.</p>
 
           </td>
           <td class="code leading">
@@ -132,7 +132,7 @@
         
         <tr>
           <td class="docs">
-            <p>The <code>Host</code> contains both the hostname and the port,if present. Use <code>SplitHostPort</code> to extract them.</p>
+            <p><code>Host</code>는 호스트명과 포트를 포함하고 있습니다 (존재하는 경우). 이 값들을 추출하기 위해선 <code>SplitHostPort</code>를 사용합니다.</p>
 
           </td>
           <td class="code leading">
@@ -148,7 +148,7 @@
         
         <tr>
           <td class="docs">
-            <p>Here we extract the <code>path</code> and the fragment afterthe <code>#</code>.</p>
+            <p><code>경로(path)</code>와 <code>#</code> 뒤의 프레그먼트를 추출하고 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -162,7 +162,7 @@
         
         <tr>
           <td class="docs">
-            <p>To get query params in a string of <code>k=v</code> format,use <code>RawQuery</code>. You can also parse query paramsinto a map. The parsed query param maps are fromstrings to slices of strings, so index into <code>[0]</code>if you only want the first value.</p>
+            <p><code>k=v</code> 포맷의 문자열에서 쿼리 파라미터를 얻기 위해 <code>RawQuery</code>를 사용합니다. 쿼리 파라미터를 맵으로 파싱할 수도 있습니다. 파싱된 쿼리 파라미터 맵은 문자열부터 문자열의 슬라이스까지이므로 첫번째 값만을 가져오려면 <code>[0]</code>를 사용합니다.</p>
 
           </td>
           <td class="code">
@@ -183,7 +183,7 @@
         
         <tr>
           <td class="docs">
-            <p>Running our URL parsing program shows all the differentpieces that we extracted.</p>
+            <p>URL 파싱 프로그램을 실행하면 추출한 모든 다른 URL 조각들을 보여쥽니다.</p>
 
           </td>
           <td class="code">

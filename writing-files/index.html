@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>Writing files in Go follows similar patterns to theones we saw earlier for reading.</p>
+            <p>Go에서 파일 쓰기는 이전에 본 읽기와 유사한 패턴을 갖습니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -93,7 +93,7 @@
         
         <tr>
           <td class="docs">
-            <p>To start, here's how to dump a string (or justbytes) into a file.</p>
+            <p>시작은, 문자열 (또는 바이트)을 파일로 덤프하는 방법입니다.</p>
 
           </td>
           <td class="code leading">
@@ -108,7 +108,7 @@
         
         <tr>
           <td class="docs">
-            <p>For more granular writes, open a file for writing.</p>
+            <p>보다 세분화된 쓰기를 위해, 파일을 엽니다.</p>
 
           </td>
           <td class="code leading">
@@ -122,7 +122,7 @@
         
         <tr>
           <td class="docs">
-            <p>It's idiomatic to defer a <code>Close</code> immediatelyafter opening a file.</p>
+            <p>파일을 연 직후 <code>Close</code>를 지연시키는건 Go에서의 관행입니다.</p>
 
           </td>
           <td class="code leading">
@@ -135,7 +135,7 @@
         
         <tr>
           <td class="docs">
-            <p>You can <code>Write</code> byte slices as you'd expect.</p>
+            <p>예상한대로 바이트 슬라이스를 <code>Write</code> 할 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -151,7 +151,7 @@
         
         <tr>
           <td class="docs">
-            <p>A <code>WriteString</code> is also available.</p>
+            <p><code>WriteString</code>도 사용 가능합니다.</p>
 
           </td>
           <td class="code leading">
@@ -165,7 +165,7 @@
         
         <tr>
           <td class="docs">
-            <p>Issue a <code>Sync</code> to flush writes to stable storage.</p>
+            <p><code>Sync</code>를 실행하여 안정적인 스토리지에 쓰기를 플러시합니다.</p>
 
           </td>
           <td class="code leading">
@@ -178,7 +178,7 @@
         
         <tr>
           <td class="docs">
-            <p><code>bufio</code> provides buffered writers in additionto the buffered readers we saw earlier.</p>
+            <p><code>bufio</code>는 이전에 봤던 버퍼링된 리더에 추가로 버퍼링된 라이터(writers)를 제공합니다.</p>
 
           </td>
           <td class="code leading">
@@ -193,7 +193,7 @@
         
         <tr>
           <td class="docs">
-            <p>Use <code>Flush</code> to ensure all buffered operations havebeen applied to the underlying writer.</p>
+            <p><code>Flush</code>를 사용하여 모든 버퍼링된 작업이 라이터에 적용되었는지 확인합니다.</p>
 
           </td>
           <td class="code leading">
@@ -222,7 +222,7 @@
         
         <tr>
           <td class="docs">
-            <p>Try running the file-writing code.</p>
+            <p>파일 쓰기 코드를 실행해보세요.</p>
 
           </td>
           <td class="code leading">
@@ -238,7 +238,7 @@
         
         <tr>
           <td class="docs">
-            <p>Then check the contents of the written files.</p>
+            <p>그리고 작성된 파일의 내용을 확인하세요.</p>
 
           </td>
           <td class="code leading">
@@ -257,7 +257,7 @@
         
         <tr>
           <td class="docs">
-            <p>Next we'll look at applying some of the file I/O ideaswe've just seen to the <code>stdin</code> and <code>stdout</code> streams.</p>
+            <p>다음으로 우리가 방금 본 파일 I/O 아이디어를 <code>stdin</code>과 <code>stdout</code> 스트림에 적용해 보겠습니다.</p>
 
           </td>
           <td class="code empty">

@@ -1,5 +1,4 @@
-// Writing files in Go follows similar patterns to the
-// ones we saw earlier for reading.
+// Go에서 파일 쓰기는 이전에 본 읽기와 유사한 패턴을 갖습니다.
 
 package main
 
@@ -18,41 +17,37 @@ func check(e error) {
 
 func main() {
 
-	// To start, here's how to dump a string (or just
-	// bytes) into a file.
+	// 시작은, 문자열 (또는 바이트)을 파일로 덤프하는 방법입니다.
 	d1 := []byte("hello\ngo\n")
 	err := ioutil.WriteFile("/tmp/dat1", d1, 0644)
 	check(err)
 
-	// For more granular writes, open a file for writing.
+	// 보다 세분화된 쓰기를 위해, 파일을 엽니다.
 	f, err := os.Create("/tmp/dat2")
 	check(err)
 
-	// It's idiomatic to defer a `Close` immediately
-	// after opening a file.
+	// 파일을 연 직후 `Close`를 지연시키는건 Go에서의 관행입니다.
 	defer f.Close()
 
-	// You can `Write` byte slices as you'd expect.
+	// 예상한대로 바이트 슬라이스를 `Write` 할 수 있습니다.
 	d2 := []byte{115, 111, 109, 101, 10}
 	n2, err := f.Write(d2)
 	check(err)
 	fmt.Printf("wrote %d bytes\n", n2)
 
-	// A `WriteString` is also available.
+	// `WriteString`도 사용 가능합니다.
 	n3, err := f.WriteString("writes\n")
 	fmt.Printf("wrote %d bytes\n", n3)
 
-	// Issue a `Sync` to flush writes to stable storage.
+	// `Sync`를 실행하여 안정적인 스토리지에 쓰기를 플러시합니다.
 	f.Sync()
 
-	// `bufio` provides buffered writers in addition
-	// to the buffered readers we saw earlier.
+	// `bufio`는 이전에 봤던 버퍼링된 리더에 추가로 버퍼링된 라이터(writers)를 제공합니다.
 	w := bufio.NewWriter(f)
 	n4, err := w.WriteString("buffered\n")
 	fmt.Printf("wrote %d bytes\n", n4)
 
-	// Use `Flush` to ensure all buffered operations have
-	// been applied to the underlying writer.
+	// `Flush`를 사용하여 모든 버퍼링된 작업이 라이터에 적용되었는지 확인합니다.
 	w.Flush()
 
 }

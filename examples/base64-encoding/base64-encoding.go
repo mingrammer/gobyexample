@@ -1,35 +1,29 @@
-// Go provides built-in support for [base64
-// encoding/decoding](http://en.wikipedia.org/wiki/Base64).
+// Go는 [base64 인코딩/디코딩(base64 encoding/decoding)](http://en.wikipedia.org/wiki/Base64)을 내장 기능으로 지원합니다.
 
 package main
 
-// This syntax imports the `encoding/base64` package with
-// the `b64` name instead of the default `base64`. It'll
-// save us some space below.
+// 다음 구문은 `encoding/base64` 패키지를 기본값인 `base64` 대신 `b64`라는 이름으로 임포트 합니다.
+//  이는 공간을 조금 절약합니다.
 import b64 "encoding/base64"
 import "fmt"
 
 func main() {
 
-	// Here's the `string` we'll encode/decode.
+	// 다음은 우리가 인코딩/디코딩할 `문자열(string)` 입니다.
 	data := "abc123!?$*&()'-=@~"
 
-	// Go supports both standard and URL-compatible
-	// base64. Here's how to encode using the standard
-	// encoder. The encoder requires a `[]byte` so we
-	// cast our `string` to that type.
+	// Go는 표준과 URL 호환 base64 모두 지원합니다.
+	//  다음은 표준 인코더로 인코딩하는 방법입니다.
+	//  인코더는 `[]byte`를 받으므로 `string`을 이 타입으로 캐스팅 해야합니다.
 	sEnc := b64.StdEncoding.EncodeToString([]byte(data))
 	fmt.Println(sEnc)
 
-	// Decoding may return an error, which you can check
-	// if you don't already know the input to be
-	// well-formed.
+	// 디코딩은 에러를 반환할 수도 있는데, 입력값이 올바론 형태인지 모를 경우 이를 통해 확인할 수 있습니다.
 	sDec, _ := b64.StdEncoding.DecodeString(sEnc)
 	fmt.Println(string(sDec))
 	fmt.Println()
 
-	// This encodes/decodes using a URL-compatible base64
-	// format.
+	// 다음은 URL 호환 base64 포맷으로 인코딩/디코딩하는 예입니다.
 	uEnc := b64.URLEncoding.EncodeToString([]byte(data))
 	fmt.Println(uEnc)
 	uDec, _ := b64.URLEncoding.DecodeString(uEnc)

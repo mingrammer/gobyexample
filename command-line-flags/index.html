@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p><a href="http://en.wikipedia.org/wiki/Command-line_interface#Command-line_option"><em>Command-line flags</em></a>are a common way to specify options for command-lineprograms. For example, in <code>wc -l</code> the <code>-l</code> is acommand-line flag.</p>
+            <p><a href="http://en.wikipedia.org/wiki/Command-line_interface#Command-line_option"><em>커맨드라인 플래그 (Command-line flags)</em></a>는 커맨드라인 프로그램에 옵션을 지정하는 일반적인 방법입니다. 예를 들어, <code>wc -l</code>에서 <code>-l</code>은 커맨드라인 플래그입니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -48,7 +48,7 @@
         
         <tr>
           <td class="docs">
-            <p>Go provides a <code>flag</code> package supporting basiccommand-line flag parsing. We'll use this package toimplement our example command-line program.</p>
+            <p>Go는 기본적인 커맨드라인 플래그 파싱을 지원하는 <code>flag</code> 패키지를 제공합니다. 이 패키지를 사용하여 예제 커맨드라인 프로그램을 구현해보겠습니다.</p>
 
           </td>
           <td class="code leading">
@@ -74,7 +74,7 @@
         
         <tr>
           <td class="docs">
-            <p>Basic flag declarations are available for string,integer, and boolean options. Here we declare astring flag <code>word</code> with a default value <code>&quot;foo&quot;</code>and a short description. This <code>flag.String</code> functionreturns a string pointer (not a string value);we'll see how to use this pointer below.</p>
+            <p>기본적인 플래그 선언은 문자열, 정수, 그리고 불리언 옵션에서 사용 가능합니다. 다음은 <code>&quot;foo&quot;</code>를 기본값으로 하고 간단한 설명을 가진 <code>word</code>라는 문자열 플래그의 선언입니다. <code>flag.String</code> 함수는 문자열 포인터를 반환합니다 (문자열 값이 아님) 아래에서 이 포인터를 어떻게 사용하는지 살펴보겠습니다.</p>
 
           </td>
           <td class="code leading">
@@ -87,7 +87,7 @@
         
         <tr>
           <td class="docs">
-            <p>This declares <code>numb</code> and <code>fork</code> flags, using asimilar approach to the <code>word</code> flag.</p>
+            <p>다음은 <code>word</code> 플래그 선언과 유사한 방법을 사용해 선언한 <code>numb</code>와 <code>fork</code> 플래그입니다.</p>
 
           </td>
           <td class="code leading">
@@ -101,7 +101,7 @@
         
         <tr>
           <td class="docs">
-            <p>It's also possible to declare an option that uses anexisting var declared elsewhere in the program.Note that we need to pass in a pointer to the flagdeclaration function.</p>
+            <p>프로그램의 기존에 다른 곳에서 선언된 변수를 사용해 옵션을 선언하는 것도 가능합니다. 참고로 플래그 선언 함수에 변수의 포인터를 전달해야합니다.</p>
 
           </td>
           <td class="code leading">
@@ -115,7 +115,7 @@
         
         <tr>
           <td class="docs">
-            <p>Once all flags are declared, call <code>flag.Parse()</code>to execute the command-line parsing.</p>
+            <p>모든 플래그가 선언되면, 커맨드라인 파싱을 실행하기 위해 <code>flag.Parse()</code>을 호출합니다.</p>
 
           </td>
           <td class="code leading">
@@ -128,7 +128,7 @@
         
         <tr>
           <td class="docs">
-            <p>Here we'll just dump out the parsed options andany trailing positional arguments. Note that weneed to dereference the pointers with e.g. <code>*wordPtr</code>to get the actual option values.</p>
+            <p>다음은 파싱된 옵션들과 후미에 위치하는 인자들을 덤프합니다. 참고로 실제 옵션값을 얻기 위해선 <code>*wordPtr</code>와 같이 포인터를 역참조 해야합니다.</p>
 
           </td>
           <td class="code">
@@ -150,7 +150,7 @@
         
         <tr>
           <td class="docs">
-            <p>To experiment with the command-line flags program it'sbest to first compile it and then run the resultingbinary directly.</p>
+            <p>커맨드라인 플래그 프로그램을 실험하려면 우선 이를 컴파일한 후 직접 결과 바이너리를 실행하는 것이 가장 좋습니다.</p>
 
           </td>
           <td class="code leading">
@@ -163,7 +163,7 @@
         
         <tr>
           <td class="docs">
-            <p>Try out the built program by first giving it values forall flags.</p>
+            <p>처음엔 모든 플래그에 값을 주어 프로그램을 실행해 봅시다.</p>
 
           </td>
           <td class="code leading">
@@ -181,7 +181,7 @@
         
         <tr>
           <td class="docs">
-            <p>Note that if you omit flags they automatically taketheir default values.</p>
+            <p>참고로 생략된 플래그들은 자동으로 기본값을 갖게 됩니다.</p>
 
           </td>
           <td class="code leading">
@@ -199,7 +199,7 @@
         
         <tr>
           <td class="docs">
-            <p>Trailing positional arguments can be provided afterany flags.</p>
+            <p>후미에 위치한 인자들은 모든 플래그 뒤에 위치할 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -215,7 +215,7 @@
         
         <tr>
           <td class="docs">
-            <p>Note that the <code>flag</code> package requires all flags toappear before positional arguments (otherwise the flagswill be interpreted as positional arguments).</p>
+            <p>참고로 <code>flag</code> 패키지에서 모든 플래그들은 위치 인자 전에 나타나야합니다. (그렇지 않으면 플래그들은 위치 인자로 해석됩니다)</p>
 
           </td>
           <td class="code leading">
@@ -233,7 +233,7 @@
         
         <tr>
           <td class="docs">
-            <p>Use <code>-h</code> or <code>--help</code> flags to get automaticallygenerated help text for the command-line program.</p>
+            <p><code>-h</code> 또는 <code>--help</code> 플래그를 사용하면 커맨드라인 프로그램에 대해 자동으로 생성된 도움말을 볼 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -251,7 +251,7 @@
         
         <tr>
           <td class="docs">
-            <p>If you provide a flag that wasn't specified to the<code>flag</code> package, the program will print an error messageand show the help text again.</p>
+            <p><code>flag</code> 패키지로 지정되지 않은 플래그를 사용하면, 프로그램은 에러 메시지를 출력하며 도움말을 다시 보여줍니다.</p>
 
           </td>
           <td class="code leading">
@@ -267,7 +267,7 @@
         
         <tr>
           <td class="docs">
-            <p>Next we'll look at environment variables, another commonway to parameterize programs.</p>
+            <p>다음장에선 또 다른 프로그램을 매개변수화하는 일반적인 방법인 환경변수에 대해 살펴보겠습니다.</p>
 
           </td>
           <td class="code empty">

@@ -1,5 +1,5 @@
-# The spawned programs return output that is the same
-# as if we had run them directly from the command-line.
+# 생성된 프로그램은 우리가 커맨드라인에서 실행한 것과
+#  완벽히 똑같은 output을 리턴합니다.
 $ go run spawning-processes.go 
 > date
 Wed Oct 10 09:53:11 PDT 2012

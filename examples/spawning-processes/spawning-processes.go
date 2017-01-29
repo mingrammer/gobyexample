@@ -12,16 +12,15 @@ import "os/exec"
 
 func main() {
 
-	// We'll start with a simple command that takes no
-	// arguments or input and just prints something to
-	// stdout. The `exec.Command` helper creates an object
-	// to represent this external process.
+  // 인자와 입력을 받지 않고 stdout에 아무거나 출력하는
+  //  간단한 커맨드에서 시작해봅시다. `exec.Command`는
+  //  외부 프로세스를 표현하기 위한 객체를 만들어주는 유용한
+  //  도구입니다.
 	dateCmd := exec.Command("date")
 
-	// `.Output` is another helper that handles the common
-	// case of running a command, waiting for it to finish,
-	// and collecting its output. If there were no errors,
-	// `dateOut` will hold bytes with the date info.
+  // `.Output`은 커맨드 실행과 종료 대기, 그리고 output을
+  //  가져오는데 사용되는 유유용한 도구입니다. 에러가 없다면
+  //  `dateOut`에는 날짜 정보를 담은 byte들을 들고있을 것입니다.
 	dateOut, err := dateCmd.Output()
 	if err != nil {
 		panic(err)
@@ -29,15 +28,13 @@ func main() {
 	fmt.Println("> date")
 	fmt.Println(string(dateOut))
 
-	// Next we'll look at a slightly more involved case
-	// where we pipe data to the external process on its
-	// `stdin` and collect the results from its `stdout`.
+  // 다음으로는 데이터를 `stdin`으로 파이프하여 `stdout`에서 
+  //  output을 가져오는 조금 더 복잡한 케이스를 살펴보도록 하겠습니다.
 	grepCmd := exec.Command("grep", "hello")
 
-	// Here we explicitly grab input/output pipes, start
-	// the process, write some input to it, read the
-	// resulting output, and finally wait for the process
-	// to exit.
+  // 여기서는 명시적으로 input과 output을 파이프하여
+  //  프로세스를 시작하고, input에 데이터를 쓴 뒤
+  //  나오는 output을 가져오고, 프로세스 종료를 기다립니다.
 	grepIn, _ := grepCmd.StdinPipe()
 	grepOut, _ := grepCmd.StdoutPipe()
 	grepCmd.Start()
@@ -46,20 +43,18 @@ func main() {
 	grepBytes, _ := ioutil.ReadAll(grepOut)
 	grepCmd.Wait()
 
-	// We ommited error checks in the above example, but
-	// you could use the usual `if err != nil` pattern for
-	// all of them. We also only collect the `StdoutPipe`
-	// results, but you could collect the `StderrPipe` in
-	// exactly the same way.
+  // 위의 예제에서는 에러 체크를 생각했습니다만, 모두 
+  //  전형적인 `if err != nil` 패턴을 이용하여 에러를 체크할 수
+  //  있습니다. 또한 우리가 위에서 `StdoutPipe`의 결과만 봤지만,
+  //  `StderrPipe`의 결과도 똑같은 방법으로 볼 수 있습니다.
 	fmt.Println("> grep hello")
 	fmt.Println(string(grepBytes))
 
-	// Note that when spawning commands we need to
-	// provide an explicitly delineated command and
-	// argument array, vs. being able to just pass in one
-	// command-line string. If you want to spawn a full
-	// command with a string, you can use `bash`'s `-c`
-	// option:
+  // 프로세스를 생성할 때 명시적으로 argument별로 구분된
+  //  argument array를 제공하거나, 전체 command가 담긴
+  //  string 하나를 제공한다는 점을 기억하세요.
+  //  만약 전체 command를 담은 string하나로 프로세스를 생성하고 싶다면
+  //  `bash`의 `-c` 옵션을 사용하면 됩니다.
 	lsCmd := exec.Command("bash", "-c", "ls -a -l -h")
 	lsOut, err := lsCmd.Output()
 	if err != nil {

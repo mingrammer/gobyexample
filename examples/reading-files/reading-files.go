@@ -54,7 +54,7 @@ func main() {
 	check(err)
 	fmt.Printf("%d bytes @ %d: %s\n", n3, o3, string(b3))
 
-	// 내장 기능중 되돌아가기 기능은 없지만 `Seek(0, 0)`으로 할 수 있습니다.
+	// 내장 기능중 되감기 기능은 없지만 `Seek(0, 0)`으로 대신 할 수 있습니다.
 	_, err = f.Seek(0, 0)
 	check(err)
 

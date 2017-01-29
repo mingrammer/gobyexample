@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>Reading and writing files are basic tasks needed formany Go programs. First we'll look at some examples ofreading files.</p>
+            <p>파일 읽기와 쓰기는 많은 Go 프로그램에서 필요로하는 기본적인 작업입니다. 우선 파일 읽기의 몇 가지 예시를 살펴보겠습니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -66,7 +66,7 @@
         
         <tr>
           <td class="docs">
-            <p>Reading files requires checking most calls for errors.This helper will streamline our error checks below.</p>
+            <p>파일을 읽으려면 대부분의 에러 호출을 확인해야합니다. 이 헬퍼는 아래에서의 에러 체크를 간소화합니다.</p>
 
           </td>
           <td class="code leading">
@@ -95,7 +95,7 @@
         
         <tr>
           <td class="docs">
-            <p>Perhaps the most basic file reading task isslurping a file's entire contents into memory.</p>
+            <p>가장 기본적인 파일 읽기 작업은 아마 파일의 전체 내용을 메모리로 올리는 작업일겁니다.</p>
 
           </td>
           <td class="code leading">
@@ -110,7 +110,7 @@
         
         <tr>
           <td class="docs">
-            <p>You'll often want more control over how and whatparts of a file are read. For these tasks, startby <code>Open</code>ing a file to obtain an <code>os.File</code> value.</p>
+            <p>종종 파일 내용에 대해 더 많은 제어를 하고 싶을때가 있습니다. 이를 위해선 파일을 <code>Open</code>하여 <code>os.File</code> 값을 얻습니다.</p>
 
           </td>
           <td class="code leading">
@@ -124,7 +124,7 @@
         
         <tr>
           <td class="docs">
-            <p>Read some bytes from the beginning of the file.Allow up to 5 to be read but also note how manyactually were read.</p>
+            <p>파일의 첫 부분에서 일부 바이트를 읽습니다. 5 바이트까지 읽기를 허용하고 실제로 얼마나 많이 읽었는지를 기록합니다.</p>
 
           </td>
           <td class="code leading">
@@ -140,7 +140,7 @@
         
         <tr>
           <td class="docs">
-            <p>You can also <code>Seek</code> to a known location in the fileand <code>Read</code> from there.</p>
+            <p>또한 파일의 특정 위치를 <code>Seek</code>하고 그 지점으로부터 <code>Read</code>를 할 수도 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -158,7 +158,7 @@
         
         <tr>
           <td class="docs">
-            <p>The <code>io</code> package provides some functions that maybe helpful for file reading. For example, readslike the ones above can be more robustlyimplemented with <code>ReadAtLeast</code>.</p>
+            <p><code>io</code> 패키지는 파일을 읽을때 유용할 만한 몇 가지 함수를 제공합니다. 예를 들어, 위와 같은 읽기는 <code>ReadAtLeast</code>로 좀 더 견고하게 구현할 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -176,7 +176,7 @@
         
         <tr>
           <td class="docs">
-            <p>There is no built-in rewind, but <code>Seek(0, 0)</code>accomplishes this.</p>
+            <p>내장 기능중 되돌아가기 기능은 없지만 <code>Seek(0, 0)</code>으로 할 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -190,7 +190,7 @@
         
         <tr>
           <td class="docs">
-            <p>The <code>bufio</code> package implements a bufferedreader that may be useful both for its efficiencywith many small reads and because of the additionalreading methods it provides.</p>
+            <p><code>bufio</code> 패키지는 많은 작은 읽기의 효율성과 패키지가 제공하는 추가적인 읽기 메서드 덕분에 유용할 수 있는 버퍼링된 리더를 구현하고 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -206,7 +206,7 @@
         
         <tr>
           <td class="docs">
-            <p>Close the file when you're done (usually this wouldbe scheduled immediately after <code>Open</code>ing with<code>defer</code>).</p>
+            <p>작업이 끝나면 파일을 닫습니다. (보통 <code>Open</code> 직후 <code>defer</code>로 스케쥴링합니다.)</p>
 
           </td>
           <td class="code leading">
@@ -255,7 +255,7 @@
         
         <tr>
           <td class="docs">
-            <p>Next we'll look at writing files.</p>
+            <p>다음장에선 파일 쓰기에 대해 살펴보겠습니다.</p>
 
           </td>
           <td class="code empty">

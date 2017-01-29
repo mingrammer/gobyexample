@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p><a href="http://en.wikipedia.org/wiki/SHA-1"><em>SHA1 hashes</em></a> arefrequently used to compute short identities for binaryor text blobs. For example, the <a href="http://git-scm.com/">git revision controlsystem</a> uses SHA1s extensively toidentify versioned files and directories. Here's how tocompute SHA1 hashes in Go.</p>
+            <p><a href="http://en.wikipedia.org/wiki/SHA-1"><em>SHA1 해시</em>(<em>SHA1 hashes</em>)</a>는 바이너리나 텍스트 블롭에 대한 짧은 식별자를 계산하기 위해 자주 사용됩니다. 예를 들어, <a href="http://git-scm.com/">git revision control system</a>은 버저닝된 파일과 디렉토리를 식별하기 위해 광범위하게 SHA1을 사용합니다. 여기에 Go에서 SHA1 해시를 계산하는 방법이 있습니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -48,7 +48,7 @@
         
         <tr>
           <td class="docs">
-            <p>Go implements several hash functions in various<code>crypto/*</code> packages.</p>
+            <p>Go는 다양한 <code>crypto/*</code> 패키지들에서 여러가지 해시 함수들을 구현하고 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -75,7 +75,7 @@
         
         <tr>
           <td class="docs">
-            <p>The pattern for generating a hash is <code>sha1.New()</code>,<code>sha1.Write(bytes)</code>, then <code>sha1.Sum([]byte{})</code>.Here we start with a new hash.</p>
+            <p>해시를 생성하는 패턴은 <code>sha1.New()</code>, <code>sha1.Write(bytes)</code>, 그리고 <code>sha1.Sum([]byte{})</code>입니다. 새로운 해시를 만드는것부터 시작해봅시다.</p>
 
           </td>
           <td class="code leading">
@@ -88,7 +88,7 @@
         
         <tr>
           <td class="docs">
-            <p><code>Write</code> expects bytes. If you have a string <code>s</code>,use <code>[]byte(s)</code> to coerce it to bytes.</p>
+            <p><code>Write</code>는 바이트를 받습니다. 문자열을 <code>s</code>를 가지고 있다면, <code>[]byte(s)</code>를 사용해 이를 바이트로 강제하세요.</p>
 
           </td>
           <td class="code leading">
@@ -101,7 +101,7 @@
         
         <tr>
           <td class="docs">
-            <p>This gets the finalized hash result as a byteslice. The argument to <code>Sum</code> can be used to appendto an existing byte slice: it usually isn't needed.</p>
+            <p>다음은 최종 해시 결괏값을 바이트 슬라이스로 얻습니다. <code>Sum</code>의 인자는 기존 바이트 슬라이스에 덧불이기 위해 사용될 수 있습니다: 보통은 필요하지 않습니다.</p>
 
           </td>
           <td class="code leading">
@@ -114,7 +114,7 @@
         
         <tr>
           <td class="docs">
-            <p>SHA1 values are often printed in hex, for examplein git commits. Use the <code>%x</code> format verb to converta hash results to a hex string.</p>
+            <p>SHA1 값은 종종 16진수로 출력되는데, 예로 git 커밋이 있습니다. 해쉬값을 16진수 문자열로 변환하기 위해선 <code>%x</code> 포맷 verb를 사용하세요.</p>
 
           </td>
           <td class="code">
@@ -133,7 +133,7 @@
         
         <tr>
           <td class="docs">
-            <p>Running the program computes the hash and prints it ina human-readable hex format.</p>
+            <p>프로그램을 실행하면 해시를 계산하고 이를 사람이 읽을 수 있는 16진수 포맷으로 출력합니다.</p>
 
           </td>
           <td class="code leading">
@@ -148,7 +148,7 @@
         
         <tr>
           <td class="docs">
-            <p>You can compute other hashes using a similar pattern tothe one shown above. For example, to compute MD5 hashesimport <code>crypto/md5</code> and use <code>md5.New()</code>.</p>
+            <p>위에서 봤던 패턴과 유사한 패턴을 사용하여 다른 해시를 계산할 수 있습니다. 예를 들면, MD5 해시를 계산하기 위해선 <code>crypto/md5</code>를 임포트하고 <code>md5.New()</code>를 사용합니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -159,7 +159,7 @@
         
         <tr>
           <td class="docs">
-            <p>Note that if you need cryptographically secure hashes,you should carefully research<a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function">hash strength</a>!</p>
+            <p>참고로 암호학적으로 안전한 해시가 필요하다면 <a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function">해시 강도(hash strength)</a>를 주의깊게 조사해야합니다.</p>
 
           </td>
           <td class="code empty">

@@ -22,6 +22,6 @@ func main() {
 	fmt.Println(int64(d))
 
 	// 숫자는 변수 할당이나 함수 호출과 같은 컨텍스트에서 사용하여 타입을 부여할 수 있습니다.
-	//  예를 들면, `math.Sin`은 `float64`를 예상합니다.
+	//  예를 들면, `math.Sin`은 `float64`를 기대합니다.
 	fmt.Println(math.Sin(n))
 }

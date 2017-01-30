@@ -2,7 +2,7 @@
 //  때가 있습니다. 예를 들어, 이 페이지의 syntax highlighting은
 //  [`pygmentize`](http://pygments.org/)를 Go 프로그램에서 띄우는 방식으로
 //  [구현](https://github.com/mmcgrana/gobyexample/blob/master/tools/generate.go)
-// 되었습니다. Go에서 다른 프로세스를 띄우는 몇몇 예제를 살펴봅시다.
+// 되었습니다. Go에서 다른 프로세스를 띄우는 몇 가지 예제를 살펴봅시다.
 
 package main
 
@@ -19,8 +19,8 @@ func main() {
 	dateCmd := exec.Command("date")
 
 	// `.Output`은 커맨드 실행과 종료 대기, 그리고 output을
-	//  가져오는데 사용되는 유유용한 도구입니다. 에러가 없다면
-	//  `dateOut`에는 날짜 정보를 담은 byte들을 들고있을 것입니다.
+	//  가져오는데 사용되는 유용한 도구입니다. 에러가 없다면
+	//  `dateOut`에는 날짜 정보를 담은 바이트를 저장할 겁니다.
 	dateOut, err := dateCmd.Output()
 	if err != nil {
 		panic(err)
@@ -43,17 +43,17 @@ func main() {
 	grepBytes, _ := ioutil.ReadAll(grepOut)
 	grepCmd.Wait()
 
-	// 위의 예제에서는 에러 체크를 생각했습니다만, 모두
-	//  전형적인 `if err != nil` 패턴을 이용하여 에러를 체크할 수
-	//  있습니다. 또한 우리가 위에서 `StdoutPipe`의 결과만 봤지만,
-	//  `StderrPipe`의 결과도 똑같은 방법으로 볼 수 있습니다.
+	// 위의 예제에서는 에러 체크를 생략했지만, 모든 경우에 대해
+	//  `if err != nil` 패턴을 사용할 수 있습니다.
+	//  또한 우리가 위에서 `StdoutPipe`의 결과만 수집했지만,
+	//  정확히 같은 방법으로 `StderrPipe`의 결과도 수집할 수 있습니다.
 	fmt.Println("> grep hello")
 	fmt.Println(string(grepBytes))
 
-	// 프로세스를 생성할 때 명시적으로 argument별로 구분된
-	//  argument array를 제공하거나, 전체 command가 담긴
-	//  string 하나를 제공한다는 점을 기억하세요.
-	//  만약 전체 command를 담은 string하나로 프로세스를 생성하고 싶다면
+	// 프로세스를 생성할 때 명시적으로 인자별로 구분된
+	//  인자 배열을 제공하거나, 전체 커맨드가 담긴
+	//  문자열 하나를 제공한다는 점을 기억하세요.
+	//  만약 전체 커맨드를 담은 문자열 하나로 프로세스를 생성하고 싶다면
 	//  `bash`의 `-c` 옵션을 사용하면 됩니다.
 	lsCmd := exec.Command("bash", "-c", "ls -a -l -h")
 	lsOut, err := lsCmd.Output()

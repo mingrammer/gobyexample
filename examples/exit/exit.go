@@ -15,6 +15,6 @@ func main() {
 	os.Exit(3)
 }
 
-// C와 같은 다른 언어와는 달리, Go는 main에서 return된 값으로
+// C와 같은 다른 언어와는 달리, Go는 main에서 반환된 값으로
 //  exit status를 나타내지 않습니다. 만약 0이 아닌 다른 status로
 //  종료하고 싶다면 `os.Exit`를 이용해야 합니다.

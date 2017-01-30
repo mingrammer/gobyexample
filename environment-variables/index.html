@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p><a href="http://en.wikipedia.org/wiki/Environment_variable">Environment variables</a>are a universal mechanism for <a href="http://www.12factor.net/config">conveying configurationinformation to Unix programs</a>.Let's look at how to set, get, and list environment variables.</p>
+            <p><a href="http://en.wikipedia.org/wiki/Environment_variable">환경변수</a>는 <a href="http://www.12factor.net/config">Unix 프로그램에 설정 관련 정보를 전달</a>하는데 일반적으로 사용되는 방법입니다. 환경변수를 어떻게 설정하는지, 어떻게 가져오는지, 그리고 설정된 환경변수들을 어떻게 보는지 봅시다.</p>
 
           </td>
           <td class="code empty leading">
@@ -74,7 +74,7 @@
         
         <tr>
           <td class="docs">
-            <p>To set a key/value pair, use <code>os.Setenv</code>. To get avalue for a key, use <code>os.Getenv</code>. This will returnan empty string if the key isn't present in theenvironment.</p>
+            <p>환경변수의 키-값 쌍을 설정하려면 <code>os.Setenv</code>를 이용합니다. 어떤 키에 매핑된 값은 <code>os.Getenv</code>를 통해 가져올 수 있습니다. 이 함수에 주어진 키가 환경변수로 설정되지 않은 키라면 비어있는 문자열을 반환합니다.</p>
 
           </td>
           <td class="code leading">
@@ -89,7 +89,7 @@
         
         <tr>
           <td class="docs">
-            <p>Use <code>os.Environ</code> to list all key/value pairs in theenvironment. This returns a slice of strings in theform <code>KEY=value</code>. You can <code>strings.Split</code> them toget the key and value. Here we print all the keys.</p>
+            <p><code>os.Environ</code> 함수를 이용하여 환경변수로 설정된 모든 키-값 쌍의 리스트를 볼 수 있습니다. 이 함수는 <code>KEY=value</code>와 같은 형태의 문자열로 구성된 슬라이스를 반환합니다. 슬라이스의 각 원소에 <code>string.Split</code>과 같은 함수를 이용하여 키와 값을 분리할 수 있습니다. 아래는 모든 키를 출력하는 예제입니다.</p>
 
           </td>
           <td class="code">
@@ -111,7 +111,7 @@
         
         <tr>
           <td class="docs">
-            <p>Running the program shows that we pick up the valuefor <code>FOO</code> that we set in the program, but that<code>BAR</code> is empty.</p>
+            <p>프로그램을 돌려보면 <code>FOO</code>의 경우 우리가 프로그램 안에서 설정한 값을 가져오는 반면, <code>BAR</code>의 경우는 빈 문자열을 가져오는 것을 볼 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -126,7 +126,7 @@
         
         <tr>
           <td class="docs">
-            <p>The list of keys in the environment will depend on yourparticular machine.</p>
+            <p>환경변수로 지정된 키의 리스트는 컴퓨터에 따라 다르게 보일 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -142,7 +142,7 @@
         
         <tr>
           <td class="docs">
-            <p>If we set <code>BAR</code> in the environment first, the runningprogram picks that value up.</p>
+            <p>우리가 환경변수로 <code>BAR</code>를 먼저 설정해두면, 실행될 프로그램이 해당 키에 설정된 값을 가져갑니다.</p>
 
           </td>
           <td class="code">

@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>Sometimes our Go programs need to spawn other, non-Goprocesses. For example, the syntax highlighting on thissite is <a href="https://github.com/mmcgrana/gobyexample/blob/master/tools/generate.go">implemented</a>by spawning a <a href="http://pygments.org/"><code>pygmentize</code></a>process from a Go program. Let's look at a few examplesof spawning processes from Go.</p>
+            <p>간혹 우리의 Go 프로그램이 다른 Go가 아닌 프로세스를 띄워야 할 때가 있습니다. 예를 들어, 이 페이지의 syntax highlighting은 <a href="http://pygments.org/"><code>pygmentize</code></a>를 Go 프로그램에서 띄우는 방식으로 <a href="https://github.com/mmcgrana/gobyexample/blob/master/tools/generate.go">구현</a>되었습니다. Go에서 다른 프로세스를 띄우는 몇 가지 예제를 살펴봅시다.</p>
 
           </td>
           <td class="code empty leading">
@@ -74,7 +74,7 @@
         
         <tr>
           <td class="docs">
-            <p>We'll start with a simple command that takes noarguments or input and just prints something tostdout. The <code>exec.Command</code> helper creates an objectto represent this external process.</p>
+            <p>인자와 입력을 받지 않고 stdout에 아무거나 출력하는 간단한 커맨드에서 시작해봅시다. <code>exec.Command</code>는 외부 프로세스를 표현하기 위한 객체를 만들어주는 유용한 도구입니다.</p>
 
           </td>
           <td class="code leading">
@@ -87,7 +87,7 @@
         
         <tr>
           <td class="docs">
-            <p><code>.Output</code> is another helper that handles the commoncase of running a command, waiting for it to finish,and collecting its output. If there were no errors,<code>dateOut</code> will hold bytes with the date info.</p>
+            <p><code>.Output</code>은 커맨드 실행과 종료 대기, 그리고 output을 가져오는데 사용되는 유용한 도구입니다. 에러가 없다면 <code>dateOut</code>에는 날짜 정보를 담은 바이트를 저장할 겁니다.</p>
 
           </td>
           <td class="code leading">
@@ -105,7 +105,7 @@
         
         <tr>
           <td class="docs">
-            <p>Next we'll look at a slightly more involved casewhere we pipe data to the external process on its<code>stdin</code> and collect the results from its <code>stdout</code>.</p>
+            <p>다음으로는 데이터를 <code>stdin</code>으로 파이프하여 <code>stdout</code>에서 output을 가져오는 조금 더 복잡한 케이스를 살펴보도록 하겠습니다.</p>
 
           </td>
           <td class="code leading">
@@ -118,7 +118,7 @@
         
         <tr>
           <td class="docs">
-            <p>Here we explicitly grab input/output pipes, startthe process, write some input to it, read theresulting output, and finally wait for the processto exit.</p>
+            <p>여기서는 명시적으로 input과 output을 파이프하여 프로세스를 시작하고, input에 데이터를 쓴 뒤 나오는 output을 가져오고, 프로세스 종료를 기다립니다.</p>
 
           </td>
           <td class="code leading">
@@ -137,7 +137,7 @@
         
         <tr>
           <td class="docs">
-            <p>We ommited error checks in the above example, butyou could use the usual <code>if err != nil</code> pattern forall of them. We also only collect the <code>StdoutPipe</code>results, but you could collect the <code>StderrPipe</code> inexactly the same way.</p>
+            <p>위의 예제에서는 에러 체크를 생략했지만, 모든 경우에 대해 <code>if err != nil</code> 패턴을 사용할 수 있습니다. 또한 우리가 위에서 <code>StdoutPipe</code>의 결과만 수집했지만, 정확히 같은 방법으로 <code>StderrPipe</code>의 결과도 수집할 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -151,7 +151,7 @@
         
         <tr>
           <td class="docs">
-            <p>Note that when spawning commands we need toprovide an explicitly delineated command andargument array, vs. being able to just pass in onecommand-line string. If you want to spawn a fullcommand with a string, you can use <code>bash</code>'s <code>-c</code>option:</p>
+            <p>프로세스를 생성할 때 명시적으로 인자별로 구분된 인자 배열을 제공하거나, 전체 커맨드가 담긴 문자열 하나를 제공한다는 점을 기억하세요. 만약 전체 커맨드를 담은 문자열 하나로 프로세스를 생성하고 싶다면 <code>bash</code>의 <code>-c</code> 옵션을 사용하면 됩니다.</p>
 
           </td>
           <td class="code">
@@ -175,7 +175,7 @@
         
         <tr>
           <td class="docs">
-            <p>The spawned programs return output that is the sameas if we had run them directly from the command-line.</p>
+            <p>생성된 프로그램은 우리가 커맨드라인에서 실행한 것과 정확히 똑같은 출력값을 반환합니다.</p>
 
           </td>
           <td class="code leading">

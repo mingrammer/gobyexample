@@ -25,7 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p>Use <code>os.Exit</code> to immediately exit with a givenstatus.</p>
+            <p><code>os.Exit</code>를 이용하여 프로그램을 지정된 status로 즉시 종료할 수 있습니다.</p>
 
           </td>
           <td class="code empty leading">
@@ -73,7 +73,7 @@
         
         <tr>
           <td class="docs">
-            <p><code>defer</code>s will <em>not</em> be run when using <code>os.Exit</code>, sothis <code>fmt.Println</code> will never be called.</p>
+            <p><code>defer</code>는 <code>os.Exit</code>를 이용할 때에는 <em>작동하지 않습니다.</em> 그래서 이 <code>fmt.Println</code>은 절대로 호출되지 않을 것입니다.</p>
 
           </td>
           <td class="code leading">
@@ -86,7 +86,7 @@
         
         <tr>
           <td class="docs">
-            <p>Exit with status 3.</p>
+            <p>status 3으로 종료해봅시다.</p>
 
           </td>
           <td class="code leading">
@@ -100,7 +100,7 @@
         
         <tr>
           <td class="docs">
-            <p>Note that unlike e.g. C, Go does not use an integerreturn value from <code>main</code> to indicate exit status. Ifyou'd like to exit with a non-zero status you shoulduse <code>os.Exit</code>.</p>
+            <p>C와 같은 다른 언어와는 달리, Go는 main에서 반환된 값으로 exit status를 나타내지 않습니다. 만약 0이 아닌 다른 status로 종료하고 싶다면 <code>os.Exit</code>를 이용해야 합니다.</p>
 
           </td>
           <td class="code empty">
@@ -115,7 +115,7 @@
         
         <tr>
           <td class="docs">
-            <p>If you run <code>exit.go</code> using <code>go run</code>, the exitwill be picked up by <code>go</code> and printed.</p>
+            <p>만약 <code>exit.go</code>를 <code>go run</code>을 이용하여 실행시키면, exit 값을 <code>go</code>가 가져가서 출력될 것입니다.</p>
 
           </td>
           <td class="code leading">
@@ -129,7 +129,7 @@
         
         <tr>
           <td class="docs">
-            <p>By building and executing a binary you can seethe status in the terminal.</p>
+            <p>바이너리를 빌드하여 실행시키는 경우, 터미널에서  status를 볼 수 있습니다.</p>
 
           </td>
           <td class="code leading">
@@ -145,7 +145,7 @@
         
         <tr>
           <td class="docs">
-            <p>Note that the <code>!</code> from our program never got printed.</p>
+            <p><code>!</code>는 절대로 출력되지 않는다는 것을 기억하세요!</p>
 
           </td>
           <td class="code empty">
